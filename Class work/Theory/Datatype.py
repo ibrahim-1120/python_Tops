@@ -23,3 +23,6 @@ print(map)
 set={1,2,3}
 
 print(type(set))
+
+a=input("Enter the number")
+print("number=",a)
