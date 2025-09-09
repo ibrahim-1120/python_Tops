@@ -1,0 +1,1456 @@
+1. Introduction to Python
+
+     1. Introduction to Python and its Features (simple, high-level, interpreted language)
+         Python is a high-level, interpreted programming language that is widely used for web development,
+         data science, artificial intelligence, automation, and many other applications. It was created by
+         Guido van Rossum in 1991 with the idea of making programming simple, readable, and beginner-friendly
+
+         Features of Python
+      
+              1.  Simple and Easy to Learn
+
+                Python has a clean and readable syntax.
+
+                Looks similar to English, which makes it beginner-friendly.
+
+              2.  High-Level Language
+
+                Programmers don’t need to worry about low-level details like memory management.
+
+                It allows developers to focus on solving problems rather than managing hardware.
+
+              3.  Interpreted Language
+
+                Python code runs line by line using an interpreter.
+
+                No need for compilation, which makes debugging easier.
+
+             4.   Cross-Platform
+
+                Python works on different operating systems like Windows, Mac, and Linux without changes in code.
+
+              5.  Object-Oriented and Procedural
+
+                Supports both object-oriented programming (classes, objects) and simple procedural programming.
+
+              6. Extensive Standard Library
+
+                Comes with built-in modules for math, file handling, networking, databases, etc.
+
+                Also supports thousands of external libraries (like NumPy, Pandas, Django).
+
+              7.  Free and Open Source
+
+                Python is free to use and distribute, with a huge community of developers.
+
+              8.  Dynamic Typing
+
+                No need to declare variable types explicitly; Python decides the type at runtime.
+
+              9.  Portable
+
+                The same Python program can run on multiple platforms without modification.
+   
+
+     2. History and evolution of Python 
+               1. Origin of Python
+
+                Creator: Guido van Rossum (a Dutch programmer).
+
+                Year: Late 1980s (development started in December 1989 at Centrum Wiskunde & Informatica (CWI), Netherlands).
+
+                Inspiration: Guido wanted a simple, readable, and powerful language.
+
+                Influenced by ABC language (a teaching language at CWI).
+
+                Took features from C, Modula-3, and Unix Shell.
+
+                Name: Python was named after the British comedy show “Monty Python’s Flying Circus”, not the snake.
+
+                2. Early Releases
+
+                1991: First official version Python 0.9.0 was released.
+
+                Included: exception handling, functions, and core data types (str, list, dict).
+
+                1994: Python 1.0 released.
+
+                Features: lambda, map, filter, reduce.
+
+                3. Python 2.x Series
+
+                2000: Python 2.0 released.
+
+                Introduced: list comprehensions, garbage collection (via reference counting + cycle-detecting GC).
+
+                Widely adopted, but had design limitations.
+
+                Python 2.x became very popular, but it had compatibility issues with the newer design.
+
+                2020: Support for Python 2 officially ended (January 1, 2020).
+
+                4. Python 3.x Series
+
+                2008: Python 3.0 released (also called “Py3k”).
+
+                Goal: remove design flaws, make language consistent.
+
+                Major changes:
+
+                print became a function (print()).
+
+                Better Unicode support (default strings are Unicode).
+
+                New syntax and standard library improvements.
+
+                Current stable version (2025): Python 3.12 (released Oct 2023).
+
+                Faster execution, pattern matching (match-case), improved error messages, and new performance optimizations.
+
+                5. Evolution Timeline (Quick View)
+
+                1989 – Python development started.
+
+                1991 – Python 0.9.0 released.
+
+                1994 – Python 1.0 released.
+
+                2000 – Python 2.0 released.
+
+                  2008 – Python 3.0 released.
+
+                  2020 – End of Python 2 support.
+
+                  2023 – Python 3.12 released.
+
+                  Future: Python continues to evolve with a strong community and annual updates (3.13 expected in 2024).
+
+
+     3.  Advantages of using Python over other programming languages.      
+                       Advantages of Python
+                        1. Simple and Easy to Learn
+
+                        Python has a clean, readable, and English-like syntax.
+
+                        Beginners can start coding quickly compared to languages like C++ or Java.
+
+                        2. Cross-Platform and Open Source
+
+                        Runs on Windows, macOS, Linux, Unix (and even mobile platforms).
+
+                        Free and open source, with a huge community for support.
+
+                        3. Extensive Libraries and Frameworks
+
+                        Rich set of built-in libraries (math, os, datetime, etc.).
+
+                        Thousands of external libraries/frameworks:
+
+                        NumPy, Pandas, Matplotlib → Data Science
+
+                        Django, Flask, FastAPI → Web Development
+
+                        TensorFlow, PyTorch, Scikit-learn → Machine Learning & AI
+
+                        Selenium, PyAutoGUI → Automation
+
+                        4. Versatile and Multi-Purpose
+
+                        Supports multiple programming paradigms:
+
+                        Procedural
+
+                        Object-Oriented
+
+                        Functional
+
+                        Used in web, AI, ML, data science, cybersecurity, game development, automation, IoT, and more.
+
+                        5. Strong Community Support
+
+                        One of the largest developer communities.
+
+                        Easy to find tutorials, forums, Stack Overflow discussions, and open-source projects.
+
+                        6. Rapid Development
+
+                        Shorter code compared to Java, C++, or C#.
+
+                        Faster prototyping and development cycle.
+
+                        7. Excellent Integration
+
+                        Works well with C, C++, Java, .NET, and databases like MySQL, MongoDB, PostgreSQL.
+
+                        Good for embedding and extending applications.
+
+                        8. Platform for Emerging Technologies
+
+                        Python dominates in fields like:
+
+                        Artificial Intelligence (AI)
+
+                        Machine Learning (ML)
+
+                        Data Science & Analytics
+
+                        Robotics & IoT
+
+                        Blockchain & Cybersecurity
+
+                        9. Large Standard Library
+
+                        Provides modules for file handling, networking, regular expressions, math, email, testing, etc., reducing the need to write code from scratch.
+
+                        10. Productivity and Flexibility
+
+                        Fewer lines of code → higher productivity.
+
+                        Flexible enough to adapt to small scripts as well as large enterprise applications.     
+
+
+     4.  Installing Python and setting up the development environment (Anaconda, PyCharm, or VS
+        Code).              
+
+
+         1. Installing Python
+
+                Step 1: Visit the official website → https://www.python.org/downloads/
+
+                Step 2: Download the latest version (Python 3.x).
+
+                Step 3: During installation:
+
+                 Check “Add Python to PATH” option.
+
+                Click Install Now.
+
+                Step 4: Verify installation:
+                Open Command Prompt / Terminal and type:
+
+                python --version
+
+                python3 --version
+
+                2. Setting up Development Environment
+                Option A: Using Anaconda (Best for Data Science & Machine Learning)
+
+                What is Anaconda?
+                A distribution of Python with pre-installed libraries like NumPy, Pandas, Jupyter Notebook.
+
+                Steps:
+
+                Download from https://www.anaconda.com
+                .
+
+                Install and open Anaconda Navigator.
+
+                Use Jupyter Notebook or Spyder IDE for coding.
+
+                Create virtual environments with:
+
+                conda create -n myenv python=3.12
+                conda activate myenv
+
+                Option B: Using PyCharm (Best for Professional Development)
+
+                What is PyCharm?
+                A powerful IDE made by JetBrains, great for large projects.
+
+                Steps:
+
+                Download from https://www.jetbrains.com/pycharm/
+                .
+
+                Install Community Edition (free) or Professional Edition (paid).
+
+                Create a new project → Choose interpreter (Python installed or Anaconda environment).
+
+                Start coding with features like debugging, code completion, and Git integration.
+
+                Option C: Using VS Code (Lightweight and Popular)
+
+                What is VS Code?
+                A free, lightweight editor by Microsoft with Python extensions.
+
+                Steps:
+
+                Download from https://code.visualstudio.com/
+                .
+
+                Install and open VS Code.
+
+                Go to Extensions → Install Python Extension (by Microsoft).
+
+                Select Python interpreter:
+
+                Press Ctrl+Shift+P → “Python: Select Interpreter”.
+
+                Create and run .py files easily.
+
+                3. Testing Setup
+
+                Create a file hello.py:
+
+                print("Hello, Python is ready!")     
+
+
+     5. Writing and executing your first Python program    
+             Writing and Executing Your First Python Program
+              1. Writing Your First Program
+
+              Create a simple Python program that prints a message.
+
+              Code (hello.py):
+
+              print("Hello, World!")
+
+              2. Executing the Program
+              Option A: Using Command Line / Terminal
+
+              Open Command Prompt (Windows) or Terminal (Linux/Mac).
+
+              Navigate to the folder where your file is saved:
+
+              cd path/to/your/folder
+
+
+              Run the program:
+
+              python hello.py
+
+
+              or (sometimes required on Linux/Mac):
+
+              python3 hello.py
+
+
+              ✅ Output:
+
+              Hello, World!
+
+              Option B: Using IDLE (Python’s Built-in IDE)
+
+              Open IDLE (installed with Python).
+
+              Create a new file → write the code → save it as hello.py.
+
+              Press F5 or go to Run → Run Module.
+
+              See the output in the IDLE shell.
+
+              Option C: Using VS Code
+
+              Open VS Code.
+
+              Create a new file → hello.py.
+
+              Write the code:
+
+              print("Hello, World!")
+
+
+              Right-click → Run Python File in Terminal.
+
+              Output will appear at the bottom terminal.
+
+              Option D: Using PyCharm
+
+              Open PyCharm → Create New Project.
+
+              Add a new Python file hello.py.
+
+              Write the code.
+
+              Click the green Run button ▶️.
+
+              Output appears in the Run window.
+
+              Option E: Using Jupyter Notebook (Anaconda)
+
+              Open Anaconda Navigator → Launch Jupyter Notebook.
+
+              Create a new notebook.
+
+              In a cell, type:
+
+              print("Hello, World!")
+ -----------------------------------------------------------------------------------------------------------------------------------------------                     
+ 
+ 2. Programming Style    
+  
+  1. Understanding Python’s PEP 8 guidelines.   
+          What is PEP 8?
+
+          PEP = Python Enhancement Proposal.
+
+          PEP 8 = A style guide for writing clean, readable, and consistent Python code.
+
+          Written by Guido van Rossum, Barry Warsaw, and Nick Coghlan.
+
+          Purpose: To make Python code look consistent and easy to read for everyone in the community.
+
+          2. Key PEP 8 Guidelines
+          A. Code Layout
+
+          Use 4 spaces for indentation (not tabs).
+
+          Maximum line length: 79 characters.
+
+          Blank lines:
+
+          2 blank lines before class and function definitions.
+
+          1 blank line between methods inside a class.
+
+          Why Follow PEP 8?
+
+          ✅ Improves readability of code.
+          ✅ Makes collaboration easier in teams.
+          ✅ Keeps style consistent across projects.
+          ✅ Increases professional quality of your code.
+
+          4. Tools to Check PEP 8
+
+          flake8 → Code style checker.
+
+          pylint → Checks errors & style issues.
+
+          black → Auto-formats code to follow PEP 8.
+
+   2.Indentation, comments, and naming conventions in Python
+
+     1. Indentation in Python
+
+          Indentation = Spaces at the beginning of a line.
+
+          In Python, indentation is mandatory (it defines code blocks).
+
+          Standard practice: 4 spaces per indentation level.
+
+          Tabs are discouraged (use spaces for consistency).
+
+         
+
+          # Correct indentation
+          if True:
+              print("Hello")
+              print("Python")
+   
+     2. Comments in Python
+
+                Comments are used to explain code and are ignored by the interpreter.
+
+                Types of Comments
+
+                Single-line comment: starts with #
+
+                # This is a single-line comment
+                print("Hello, World!")  # Inline comment
+
+
+                Multi-line comment:
+                Use # on each line OR use triple quotes (""" """ or ''' ''')
+
+                """
+                This is a multi-line comment.
+                It explains the program.
+                """
+                print("Python is fun!")
+
+     3. Naming Conventions in Python (PEP 8 Guidelines)
+                A. Variables and Functions
+
+                Use lowercase_with_underscores.
+
+                student_name = "Jenil"
+                total_marks = 95
+                def calculate_average(marks):
+                    return sum(marks) / len(marks)
+
+                B. Constants
+
+                Use UPPERCASE_WITH_UNDERSCORES.
+
+                PI = 3.14159
+                MAX_LIMIT = 1000     
+
+
+    3.  Writing readable and maintainable code.
+
+    Writing Readable and Maintainable Code in Python
+                    1. Follow Consistent Style (PEP 8)
+
+                    Use 4 spaces for indentation.
+
+                    Keep line length ≤ 79 characters.
+
+                    Use proper naming conventions:
+
+                    Variables/Functions → snake_case
+
+                    Classes → CamelCase
+
+                    Constants → UPPER_CASE
+
+                    ✅ Example:
+
+                    # Good
+                    student_name = "Jenil"
+                    MAX_LIMIT = 100
+
+                    class StudentRecord:
+                        pass
+
+                    2. Use Meaningful Names
+
+                    Use descriptive names instead of short or unclear ones.
+
+                    ❌ Bad:
+
+                    a = 100
+                    b = 200
+                    c = a + b
+
+
+                    ✅ Good:
+
+                    price = 100
+                    tax = 200
+                    total_cost = price + tax
+
+                    3. Write Comments and Docstrings
+
+                    Explain why you’re doing something, not just what.
+
+                    Use docstrings (""" """") to describe functions and classes.
+
+                    ✅ Example:
+
+                    def calculate_area(radius):
+                        """Return the area of a circle given its radius."""
+                        PI = 3.14159
+                        return PI * (radius ** 2)
+
+                    4. Keep Code Simple and Modular
+
+                    Break large code into functions and modules.
+
+                    Follow DRY principle (Don’t Repeat Yourself).
+
+                    ❌ Bad (repeated code):
+
+                    print(10*10*3.14159)
+                    print(5*5*3.14159)
+
+
+                    ✅ Good (use function):
+
+                    def calculate_area(radius):
+                        PI = 3.14159
+                        return PI * (radius ** 2)
+
+                    print(calculate_area(10))
+                    print(calculate_area(5))
+
+                    5. Handle Errors Gracefully
+
+                    Use try-except to manage errors.
+
+                    ✅ Example:
+
+                    try:
+                        number = int(input("Enter a number: "))
+                        print("You entered:", number)
+                    except ValueError:
+                        print("Invalid input! Please enter a number.")
+
+                    6. Organize Code Structure
+
+                    Group related files into packages/modules.
+
+                    Follow a clear folder structure (e.g., src/, tests/, docs/).
+
+                    7. Use Tools for Clean Code
+
+                    linters (flake8, pylint) → check for style & errors.
+
+                    formatters (black, autopep8) → auto-fix formatting.
+
+                    type hints for clarity:
+
+                    def greet(name: str) -> str:
+                        return f"Hello, {name}"
+
+--------------------------------------------------------------------------------------------------------------------                                      
+
+3. Core Python Concepts
+
+
+          1.Understanding data types: integers, floats,strings, lists, tuples, dictionaries,sets.
+
+              🔹 1. Integers (int)
+
+              Whole numbers (positive, negative, or zero).
+
+              No decimal point.
+
+              age = 25
+              year = -2025
+              count = 0
+              print(type(age))   # <class 'int'>
+
+              🔹 2. Floats (float)
+
+              Numbers with decimals.
+
+              Can represent fractions or very large/small numbers.
+
+              pi = 3.14
+              temperature = -12.5
+              percentage = 99.9
+              print(type(pi))   # <class 'float'>
+
+              🔹 3. Strings (str)
+
+              Text enclosed in single ('), double (") or triple (''' """) quotes.
+
+              name = "Jenil"
+              greeting = 'Hello, World!'
+              paragraph = """This is 
+              a multi-line string."""
+              print(type(name))  # <class 'str'>
+
+              🔹 4. Lists (list)
+
+              Ordered collection of items.
+
+              Can store multiple data types.
+
+              Mutable (can change values).
+
+              fruits = ["apple", "banana", "cherry"]
+              numbers = [10, 20, 30, 40]
+              mixed = [1, "hello", 3.14]
+              print(type(fruits))  # <class 'list'>
+
+              fruits[1] = "mango"   # changing value
+
+              🔹 5. Tuples (tuple)
+
+              Ordered collection like lists.
+
+              Immutable (cannot be changed).
+
+              coordinates = (10.5, 20.3)
+              colors = ("red", "green", "blue")
+              print(type(coordinates))  # <class 'tuple'>
+
+              🔹 6. Dictionaries (dict)
+
+              Collection of key-value pairs.
+
+              Unordered, but keys must be unique.
+
+              student = {
+                  "name": "Jenil",
+                  "age": 22,
+                  "course": "Python"
+              }
+              print(student["name"])  # Jenil
+              print(type(student))    # <class 'dict'>
+
+              🔹 7. Sets (set)
+
+              Collection of unique, unordered items.
+
+              No duplicate values allowed.
+
+              numbers = {1, 2, 3, 3, 4, 5}
+              print(numbers)        # {1, 2, 3, 4, 5}
+              print(type(numbers))  # <class 'set'>
+
+
+     2. Python variables and memory allocation.
+
+
+                🔹 1. What is a Variable?
+
+            A variable is a name that refers to a value stored in memory.
+
+            Think of it as a label/tag pointing to a memory location.
+
+            x = 10       # x is a variable pointing to value 10
+            name = "Jenil"
+            pi = 3.14
+
+
+            2. Memory Allocation in Python
+
+            Python memory is divided into two parts:
+
+            🔸 a) Stack Memory
+
+            Stores variable names (references).
+
+            Keeps track of function calls, local variables.
+
+            Fast but small in size.
+
+            🔸 b) Heap Memory
+
+            Stores the actual objects (data).
+
+            Managed by Python’s memory manager + garbage collector.
+
+            Larger but slower compared to stack.
+
+            Example flow:
+
+            x = 50
+
+
+     3. Python operators: arithmetic, comparison, logical, bitwise.
+
+
+              🔹 1. Arithmetic Operators
+
+              Used for mathematical operations.
+
+              Operator	Meaning	Example (a=10, b=3)	Result
+              +	Addition	a + b	13
+              -	Subtraction	a - b	7
+              *	Multiplication	a * b	30
+              /	Division	a / b	3.333
+              //	Floor division	a // b	3
+              %	Modulus	a % b	1
+              **	Exponentiation	a ** b	1000
+              a, b = 10, 3
+              print(a + b, a - b, a * b, a / b, a // b, a % b, a ** b)
+
+              🔹 2. Comparison (Relational) Operators
+
+              Used to compare values → return True or False.
+
+              Operator	Meaning	Example (a=10, b=3)	Result
+              ==	Equal to	a == b	False
+              !=	Not equal to	a != b	True
+              >	Greater than	a > b	True
+              <	Less than	a < b	False
+              >=	Greater than or equal	a >= b	True
+              <=	Less than or equal	a <= b	False
+              print(a == b, a != b, a > b, a < b, a >= b, a <= b)
+
+              🔹 3. Logical Operators
+
+              Used to combine conditional statements.
+
+              Operator	Meaning	Example (a=10, b=3)	Result
+              and	True if both true	(a > 5 and b < 5)	True
+              or	True if at least one true	(a > 5 or b > 10)	True
+              not	Negates condition	not(a > 5)	False
+              print(a > 5 and b < 5)  # True
+              print(a > 5 or b > 10)  # True
+              print(not(a > 5))       # False
+
+              🔹 4. Bitwise Operators
+
+              Operate on binary representation of integers.
+
+              Let’s take:
+
+              x, y = 6, 3   # 6 -> 110, 3 -> 011
+
+              Operator	Meaning	Example (x=6, y=3)	Binary Result	Decimal
+              &	AND	x & y	010	2
+              `	`	OR	`x	y`
+              ^	XOR	x ^ y	101	5
+              ~	NOT (1’s complement)	~x	…11111001	-7
+              <<	Left shift	x << 1	1100	12
+              >>	Right shift	x >> 1	011	3
+              x, y = 6, 3
+              print(x & y, x | y, x ^ y, ~x, x << 1, x >> 1)
+
+ -----------------------------------------------------------------------------------------------------------------------
+
+
+ 4. Conditional Statements
+
+
+           1.Introduction to conditionalstatements: if, else, elif.  
+
+                     1. if Statement
+
+                    Used to check a condition.
+
+                    If condition is True, the code inside runs.
+
+                    age = 20
+
+                    if age >= 18:
+                        print("You are eligible to vote.")
+
+
+                    ✅ Output: You are eligible to vote.
+
+                    🔹 2. if-else Statement
+
+                    Provides two paths.
+
+                    If condition is True → if block runs.
+
+                    Otherwise → else block runs.
+
+                    marks = 45
+
+                    if marks >= 50:
+                        print("Pass")
+                    else:
+                        print("Fail")
+
+
+                    ✅ Output: Fail
+
+                    🔹 3. if-elif-else Statement
+
+                    Used when you have multiple conditions.
+
+                    Python checks conditions top to bottom.
+
+                    First True condition executes, and the rest are skipped.
+
+                    score = 75
+
+                    if score >= 90:
+                        print("Grade: A")
+                    elif score >= 75:
+                        print("Grade: B")
+                    elif score >= 60:
+                        print("Grade: C")
+                    else:
+                        print("Grade: Fail")
+
+
+                    ✅ Output: Grade: B
+
+                    🔹 4. Nested if (optional but useful)
+
+                    You can place one if inside another.
+
+                    num = 15
+
+                    if num > 0:
+                        if num % 2 == 0:
+                            print("Positive Even Number")
+                        else:
+                            print("Positive Odd Number")    
+
+            2. Nested if-else conditions
+
+                  What is Nested if-else?
+
+                Nested if-else means using an if (or else) statement inside another if-else block.
+
+                It helps check multiple conditions in stages.
+
+
+                age = int(input("Enter age: "))
+                gender = input("Enter gender (M/F): ")
+
+                if age >= 18:
+                    if gender == "M":
+                        print("You are an Adult Male")
+                    else:
+                        print("You are an Adult Female")
+                else:
+                    print("You are Underage")
+--------------------------------------------------------------------------------------------------------------------------------------
+
+5. Looping (For, While)
+
+
+         1.Introduction to for and while loops.
+
+              What are Loops?
+
+              Loops are used to repeat a block of code multiple times.
+
+              Instead of writing code again and again, we use loops.
+
+              Python has two main types of loops:
+
+              for loop (when you know how many times to repeat)
+
+              while loop (when repetition depends on a condition)
+
+              🔹 1. for Loop
+
+              Used to iterate over a sequence (like list, tuple, string, range).
+
+              Executes code for each element in the sequence.
+
+              2. while Loop
+
+              Runs as long as a condition is True.
+
+              Useful when we don’t know beforehand how many times to loop.
+
+        2.How loops work in Python.
+
+
+         🔹 1. What is a Loop?
+
+          A loop is a control structure that allows Python to repeat a block of code multiple times until a condition is met.
+          Instead of writing code repeatedly, we use loops.
+
+          🔹 2. Types of Loops in Python
+
+          for loop → works with a sequence (list, tuple, string, range).
+
+          while loop → works until a condition is True.
+
+          🔹 3. How a for Loop Works
+
+          Python takes each element from a sequence one by one.
+
+          Assigns it to the loop variable.
+
+          Executes the block of code.
+
+      3.Using loops with collections (lists, tuples, etc.).
+
+
+           1. Looping through a List
+
+          Lists are ordered and allow iteration using for loop.
+
+          fruits = ["apple", "banana", "cherry"]
+
+          for fruit in fruits:
+              print(fruit)
+
+              2. Looping through a Tuple
+
+          Tuples are similar to lists but immutable.
+
+          colors = ("red", "green", "blue")
+
+          for color in colors:
+              print(color)
+
+              3. Looping through a Set
+
+          Sets are unordered (no index, no duplicates).
+
+          numbers = {1, 2, 3, 4}
+
+          for num in numbers:
+              print(num)
+
+-------------------------------------------------------------------------------------------------------------------------------------------------
+
+6. Generators and Iterators
+
+        1.Understanding how generators work in Python
+
+        1. What is a Generator?
+
+        A generator is a special type of iterator.
+
+        Instead of returning all values at once (like a list), it yields values one by one when needed.
+
+        This makes generators memory-efficient.
+
+
+        2. How to Create Generators
+
+        There are two main ways:
+
+        ✅ a) Generator Function (with yield)
+
+        Instead of return, we use yield to produce values lazily.
+
+        def my_generator():
+            yield 1
+            yield 2
+            yield 3
+
+        gen = my_generator()
+        print(next(gen))  # 1
+        print(next(gen))  # 2
+        print(next(gen))  # 3
+
+
+
+        2.Difference between yield and return.
+
+              | Feature       | `return`                          | `yield`                               |
+      | ------------- | --------------------------------- | ------------------------------------- |
+      | Function type | Normal function                   | Generator function                    |
+      | Execution     | Ends the function immediately     | Pauses and resumes the function       |
+      | Values        | Returns **one single value**      | Can produce **multiple values**       |
+      | Usage         | For single result calculations    | For sequences, streams, large data    |
+      | Memory use    | May store large results in memory | Memory efficient (one item at a time) |
+
+
+      3.Understanding iterators and creating custom iterators
+ 
+               1. What is an Iterator?
+
+              An iterator is an object that allows you to iterate (loop) through elements one at a time.
+
+              In Python, an iterator must implement two methods:
+
+              __iter__() → returns the iterator object itself.
+
+              __next__() → returns the next element, or raises StopIteration when don
+
+
+                2. Creating a Custom Iterator
+
+              You can define your own class and implement __iter__() and __next__().
+
+-----------------------------------------------------------------------------------------------------------------------------------------
+
+
+7. Functions and Methods
+
+
+       1.Defining and calling functions in Python.
+
+            1. What is a Function?
+
+            A function is a block of reusable code that performs a specific task.
+
+            Helps avoid code repetition.
+
+            Improves readability and modularity.
+
+            🔹 2. Defining a Function
+
+            We use the def keyword.
+
+            Syntax:
+
+            def function_name(parameters):
+                """Optional docstring for explanation"""
+                # function body
+                return value   # optional
+
+            🔹 3. Calling a Function
+
+            Once defined, call it using its name + parentheses.
+
+            def greet():
+                print("Hello, welcome to Python!")
+
+            # Function call
+            greet()
+  
+     2.Function arguments (positional, keyword, default).
+
+
+            1. Positional Arguments
+
+            Values are passed in order (position matters).
+
+            The first value goes to the first parameter, second to the second, etc.
+
+            2. Keyword Arguments
+
+            Arguments are passed using parameter names.
+
+            Order does not matter
+
+            3. Default Arguments
+
+            If no value is provided, the default value is used.
+
+            Useful for optional parameters.
+
+            4. Mixing Arguments
+
+            Positional first, then keyword.
+
+            Default values should come after non-default parameters.
+
+     3.Scope of variables in Python 
+
+            
+          1. What is Variable Scope?
+
+          Scope defines where a variable can be accessed inside a program.
+
+          In Python, scope is determined by where you create the variable.
+
+
+          2. Types of Scope in Python (LEGB Rule)
+
+          Python follows the LEGB rule to resolve variables:
+
+          L – Local: Variables inside a function.
+
+          E – Enclosing: Variables in outer functions (nested functions).
+
+          G – Global: Variables defined at the top-level of a script/module.
+
+          B – Built-in: Predefined names in Python (len, print, etc.).
+
+    4.Built-in methods forstrings, lists, etc.
+
+
+          1. String Methods
+
+          Strings are sequences of characters. Common methods:
+
+          2. List Methods
+
+          Lists are mutable and ordered.
+
+          3. Tuple Methods
+
+          Tuples are immutable, so very few methods exist.
+
+          4. Set Methods
+
+          Sets are unordered collections of unique items.
+
+          5. Dictionary Methods
+
+          Dictionaries store key-value pairs.
+
+ -------------------------------------------------------------------------------------------------------------------------------------------
+
+ 8. Control Statements (Break, Continue, Pass)
+
+
+        1.Understanding the role of break, continue, and pass in Python loops
+
+                1. break
+
+                Exits the loop immediately.
+
+                Control moves to the first statement after the 
+
+
+                2. continue
+
+                Skips the current iteration.
+
+                Moves to the next iteration of the loop.
+
+
+                3. pass
+
+                Does nothing (acts as a placeholder).
+
+                Useful when a statement is required syntactically, but you don’t want any action yet.
+
+
+------------------------------------------------------------------------------------------------------------------------------------------------
+
+
+9. String Manipulation
+
+       1.Understanding how to access and manipulate strings
+
+              1. Accessing Strings
+
+              Strings are sequences of characters → you can access them using indexing or slicing.
+
+              ✅ Indexing
+
+              Index starts from 0 (left to right).
+
+              Negative index starts from -1 (right to left)
+
+              ✅ Slicing
+
+              Extract parts of a string:
+
+
+              2. Traversing Strings
+
+              You can loop through each character.
+
+
+              3. String Concatenation and Repetition
+
+              Combine strings with +
+
+              Repeat strings with *
+
+              4. Common String Methods
+
+              Strings are immutable (cannot be changed directly), but you can create new ones using methods.
+
+
+     2.Basic operations: concatenation, repetition,string methods(upper(), lower(), etc.).
+ 
+                      1. Concatenation (Joining Strings)
+
+                      You can combine two or more strings using the + operator.
+
+                      s1 = "Hello"
+                      s2 = "World"
+
+                      print(s1 + " " + s2)   # Hello World
+
+                      🔹 2. Repetition (Repeating Strings)
+
+                      You can repeat a string multiple times using the * operator.
+
+                      word = "Hi "
+                      print(word * 3)   # Hi Hi Hi 
+
+                      🔹 3. Common String Methods
+
+                      Python provides many built-in string methods to manipulate text.
+
+                      text = "  hello python  "
+
+                      print(text.upper())     # HELLO PYTHON
+                      print(text.lower())     # hello python
+                      print(text.title())     # Hello Python
+                      print(text.strip())     # "hello python" (removes spaces)
+                      print(text.replace("python", "world"))  # hello world
+                      print(text.split())     # ['hello', 'python']
+                      print("-".join(["a","b","c"]))  # a-b-c
+                      print(text.find("python"))  # 8 (position where found)
+
+                      🔹 4. Checking Strings (Boolean Methods)
+
+                      These methods check the type/format of a string.
+
+                      word = "Python3"
+
+                      print(word.isalpha())   # False (contains a number)
+                      print("123".isdigit())  # True
+                      print("hello".islower())# True
+                      print("HELLO".isupper())# True
+                      print(" ".isspace())    # True
+
+
+          3.String slicing
+
+                1 . What is String Slicing?
+
+                Slicing allows you to extract a part (substring) from a string.
+                2. Basic Slicing
+                text = "Python Programming"
+
+                print(text[0:6])   # Python   (characters 0 to 5)
+                print(text[7:18])  # Programming (7 to 17)
+
+                🔹 3. Omitting Start/End
+                text = "Python"
+
+                print(text[:4])   # Pyth   (from beginning to index 3)
+                print(text[2:])   # thon   (from index 2 to end)
+                print(text[:])    # Python (whole string copy)
+
+                🔹 4. Using Step
+                word = "Python"
+
+                print(word[::2])   # Pto   (every 2nd character)
+                print(word[::-1])  # nohtyP (reverse string)
+
+                🔹 5. Negative Indexing
+
+                Negative indices count from the end (-1 is last char).
+
+                text = "Programming"
+
+                print(text[-5:])    (last 5 characters)
+                print(text[-11:-6]) 
+
+ -----------------------------------------------------------------------------------------------------------------------------------------------
+
+
+ 10. Advanced Python (map(), reduce(), filter(), Closures and Decorators)
+
+
+       1.How functional programming works in Python.
+
+
+                1. What is Functional Programming?
+
+                Functional programming is a style of programming where:
+
+                Functions are first-class citizens (can be passed as arguments, returned, stored in variables).
+
+                Emphasizes pure functions (no side effects, same input → same output).
+
+                Encourages use of higher-order functions and immutability.
+
+                2. Functions as First-Class Citizens
+
+                You can treat functions like variables.
+
+                def greet(name):
+                    return f"Hello {name}"
+
+                # Assign to a variable
+                say_hello = greet
+                print(say_hello("Jenil"))   # Hello Jenil
+
+                🔹 3. Higher-Order Functions
+
+                A function that takes another function as input or returns a function.
+
+                def square(x):
+                    return x*x
+
+                def apply_func(func, numbers):
+                    return [func(n) for n in numbers]
+
+                print(apply_func(square, [1,2,3,4]))  
+                # [1, 4, 9, 16]
+
+                🔹 4. Lambda Functions (Anonymous Functions)
+
+                Small one-line functions created with lambda.
+
+                double = lambda x: x * 2
+                print(double(5))   # 10
+
+                🔹 5. Map, Filter, Reduce
+
+                Python provides built-in FP tools.
+
+                ✅ map() → applies a function to all elements
+                nums = [1, 2, 3, 4]
+                squares = list(map(lambda x: x*x, nums))
+                print(squares)   # [1, 4, 9, 16]
+
+                ✅ filter() → keeps only values that satisfy a condition
+                nums = [10, 15, 20, 25]
+                evens = list(filter(lambda x: x % 2 == 0, nums))
+                print(evens)   # [10, 20]
+
+                ✅ reduce() → reduces sequence into a single value
+
+                (from functools)
+
+                from functools import reduce
+
+                nums = [1, 2, 3, 4]
+                product = reduce(lambda x, y: x * y, nums)
+                print(product)   # 24
+
+                🔹 6. Immutability (FP Principle)
+
+                Functional programming prefers not changing data in place.
+                Instead of modifying a list, you create a new one.
+
+                nums = [1, 2, 3]
+                new_nums = [n*2 for n in nums]  # original list not changed
+                print(nums)      # [1, 2, 3]
+                print(new_nums)  # [2, 4, 6]
+
+                🔹 7. Recursion
+
+                Functional programming often uses recursion instead of loops.
+
+                def factorial(n):
+                    if n == 0:
+                        return 1
+                    return n * factorial(n-1)
+
+                print(factorial(5))  # 120
+
+
+         2.Using map(), reduce(), and filter() functions for processing data.
+
+                 1. map() → Apply a function to every element
+
+                  Syntax:
+
+                  map(function, iterable)
+
+
+                  Returns a new iterator with transformed elements.
+
+                  ✅ Example: Squaring numbers
+
+                  nums = [1, 2, 3, 4, 5]
+                  squares = list(map(lambda x: x**2, nums))
+                  print(squares)  
+                  # [1, 4, 9, 16, 25]
+
+                  🔹 2. filter() → Select elements that satisfy a condition
+
+                  Syntax:
+
+                  filter(function, iterable)
+
+
+                  Keeps only elements where the function returns True.
+
+                  ✅ Example: Keeping only even numbers
+
+                  nums = [1, 2, 3, 4, 5, 6]
+                  evens = list(filter(lambda x: x % 2 == 0, nums))
+                  print(evens)  
+                  # [2, 4, 6]
+
+                  🔹 3. reduce() → Reduce data to a single result
+
+                  Syntax:
+
+                  reduce(function, iterable)
+
+
+                  Applies function cumulatively (needs functools).
+
+                  ✅ Example: Multiplying all numbers
+
+                  from functools import reduce
+
+                  nums = [1, 2, 3, 4, 5]
+                  product = reduce(lambda x, y: x * y, nums)
+                  print(product)  
+                  # 120
+        
+        
+        3.Introduction to closures and decorators.
+
+                  What is a Closure?
+
+                  A closure is a function that:
+
+                  Is defined inside another function.
+
+                  Uses variables from the enclosing (outer) function.
+
+                  Is returned so it can be used later.
+
+                  This allows the inner function to “remember” the state of the outer function even after the outer function has finished execution.
+
+                  2. Decorators in Python
+                  ✅ What is a Decorator?
+
+                  A decorator is a special type of function in Python that modifies the behavior of another function without changing its code.
+
+                  It is built using closures.
+
+                  Applied with @decorator_name above a function.
+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+                                      
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
