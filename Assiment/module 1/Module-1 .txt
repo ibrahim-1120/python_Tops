@@ -325,7 +325,7 @@
               python3 hello.py
 
 
-              ✅ Output:
+               Output:
 
               Hello, World!
 
@@ -335,10 +335,7 @@
 
               Create a new file → write the code → save it as hello.py.
 
-              Press F5 or go to Run → Run Module.
-
-              See the output in the IDLE shell.
-
+    
               Option C: Using VS Code
 
               Open VS Code.
@@ -354,27 +351,10 @@
 
               Output will appear at the bottom terminal.
 
-              Option D: Using PyCharm
+             
 
-              Open PyCharm → Create New Project.
-
-              Add a new Python file hello.py.
-
-              Write the code.
-
-              Click the green Run button ▶️.
-
-              Output appears in the Run window.
-
-              Option E: Using Jupyter Notebook (Anaconda)
-
-              Open Anaconda Navigator → Launch Jupyter Notebook.
-
-              Create a new notebook.
-
-              In a cell, type:
-
-              print("Hello, World!")
+            
+             
  -----------------------------------------------------------------------------------------------------------------------------------------------                     
  
  2. Programming Style    
@@ -405,10 +385,10 @@
 
           Why Follow PEP 8?
 
-          ✅ Improves readability of code.
-          ✅ Makes collaboration easier in teams.
-          ✅ Keeps style consistent across projects.
-          ✅ Increases professional quality of your code.
+         Improves readability of code.
+         Makes collaboration easier in teams.
+         Keeps style consistent across projects.
+         Increases professional quality of your code.
 
           4. Tools to Check PEP 8
 
@@ -463,9 +443,8 @@
 
                 Use lowercase_with_underscores.
 
-                student_name = "Jenil"
+                student_name = "Ibrahim"
                 total_marks = 95
-                def calculate_average(marks):
                     return sum(marks) / len(marks)
 
                 B. Constants
@@ -493,10 +472,10 @@
 
                     Constants → UPPER_CASE
 
-                    ✅ Example:
+                    Example:
 
                     # Good
-                    student_name = "Jenil"
+                    student_name = "Ibrahim"
                     MAX_LIMIT = 100
 
                     class StudentRecord:
@@ -506,14 +485,14 @@
 
                     Use descriptive names instead of short or unclear ones.
 
-                    ❌ Bad:
+                     Bad:
 
                     a = 100
                     b = 200
                     c = a + b
 
 
-                    ✅ Good:
+                    Good:
 
                     price = 100
                     tax = 200
@@ -525,9 +504,9 @@
 
                     Use docstrings (""" """") to describe functions and classes.
 
-                    ✅ Example:
+                     Example:
 
-                    def calculate_area(radius):
+                         calculate_area(radius):
                         """Return the area of a circle given its radius."""
                         PI = 3.14159
                         return PI * (radius ** 2)
@@ -538,15 +517,15 @@
 
                     Follow DRY principle (Don’t Repeat Yourself).
 
-                    ❌ Bad (repeated code):
+                     Bad (repeated code):
 
                     print(10*10*3.14159)
                     print(5*5*3.14159)
 
 
-                    ✅ Good (use function):
+                     Good (use function):
 
-                    def calculate_area(radius):
+                     calculate_area(radius):
                         PI = 3.14159
                         return PI * (radius ** 2)
 
@@ -557,7 +536,7 @@
 
                     Use try-except to manage errors.
 
-                    ✅ Example:
+                     Example:
 
                     try:
                         number = int(input("Enter a number: "))
@@ -589,7 +568,7 @@
 
           1.Understanding data types: integers, floats,strings, lists, tuples, dictionaries,sets.
 
-              🔹 1. Integers (int)
+               1. Integers (int)
 
               Whole numbers (positive, negative, or zero).
 
@@ -600,7 +579,7 @@
               count = 0
               print(type(age))   # <class 'int'>
 
-              🔹 2. Floats (float)
+               2. Floats (float)
 
               Numbers with decimals.
 
@@ -611,17 +590,17 @@
               percentage = 99.9
               print(type(pi))   # <class 'float'>
 
-              🔹 3. Strings (str)
+               3. Strings (str)
 
               Text enclosed in single ('), double (") or triple (''' """) quotes.
 
-              name = "Jenil"
+              name = "Ibrahim"
               greeting = 'Hello, World!'
               paragraph = """This is 
               a multi-line string."""
               print(type(name))  # <class 'str'>
 
-              🔹 4. Lists (list)
+               4. Lists (list)
 
               Ordered collection of items.
 
@@ -636,7 +615,7 @@
 
               fruits[1] = "mango"   # changing value
 
-              🔹 5. Tuples (tuple)
+               5. Tuples (tuple)
 
               Ordered collection like lists.
 
@@ -646,18 +625,18 @@
               colors = ("red", "green", "blue")
               print(type(coordinates))  # <class 'tuple'>
 
-              🔹 6. Dictionaries (dict)
+               6. Dictionaries (dict)
 
               Collection of key-value pairs.
 
               Unordered, but keys must be unique.
 
               student = {
-                  "name": "Jenil",
+                  "name": "Ibrahim",
                   "age": 22,
                   "course": "Python"
               }
-              print(student["name"])  # Jenil
+              print(student["name"])  # Ibrahim
               print(type(student))    # <class 'dict'>
 
               🔹 7. Sets (set)
@@ -681,7 +660,7 @@
             Think of it as a label/tag pointing to a memory location.
 
             x = 10       # x is a variable pointing to value 10
-            name = "Jenil"
+            name = "Ibrahim"
             pi = 3.14
 
 
@@ -1292,9 +1271,9 @@
 
                 # Assign to a variable
                 say_hello = greet
-                print(say_hello("Jenil"))   # Hello Jenil
+                print(say_hello("Ibrahim"))   # Hello Ibrahim
 
-                🔹 3. Higher-Order Functions
+                 3. Higher-Order Functions
 
                 A function that takes another function as input or returns a function.
 
@@ -1307,28 +1286,28 @@
                 print(apply_func(square, [1,2,3,4]))  
                 # [1, 4, 9, 16]
 
-                🔹 4. Lambda Functions (Anonymous Functions)
+                 4. Lambda Functions (Anonymous Functions)
 
                 Small one-line functions created with lambda.
 
                 double = lambda x: x * 2
                 print(double(5))   # 10
 
-                🔹 5. Map, Filter, Reduce
+                 5. Map, Filter, Reduce
 
                 Python provides built-in FP tools.
 
-                ✅ map() → applies a function to all elements
+                 map() → applies a function to all elements
                 nums = [1, 2, 3, 4]
                 squares = list(map(lambda x: x*x, nums))
                 print(squares)   # [1, 4, 9, 16]
 
-                ✅ filter() → keeps only values that satisfy a condition
+                 filter() → keeps only values that satisfy a condition
                 nums = [10, 15, 20, 25]
                 evens = list(filter(lambda x: x % 2 == 0, nums))
                 print(evens)   # [10, 20]
 
-                ✅ reduce() → reduces sequence into a single value
+                 reduce() → reduces sequence into a single value
 
                 (from functools)
 
@@ -1338,7 +1317,7 @@
                 product = reduce(lambda x, y: x * y, nums)
                 print(product)   # 24
 
-                🔹 6. Immutability (FP Principle)
+                 6. Immutability (FP Principle)
 
                 Functional programming prefers not changing data in place.
                 Instead of modifying a list, you create a new one.
@@ -1348,7 +1327,7 @@
                 print(nums)      # [1, 2, 3]
                 print(new_nums)  # [2, 4, 6]
 
-                🔹 7. Recursion
+                 7. Recursion
 
                 Functional programming often uses recursion instead of loops.
 
@@ -1371,14 +1350,14 @@
 
                   Returns a new iterator with transformed elements.
 
-                  ✅ Example: Squaring numbers
+                   Example: Squaring numbers
 
                   nums = [1, 2, 3, 4, 5]
                   squares = list(map(lambda x: x**2, nums))
                   print(squares)  
                   # [1, 4, 9, 16, 25]
 
-                  🔹 2. filter() → Select elements that satisfy a condition
+                   2. filter() → Select elements that satisfy a condition
 
                   Syntax:
 
@@ -1387,14 +1366,14 @@
 
                   Keeps only elements where the function returns True.
 
-                  ✅ Example: Keeping only even numbers
+                   Example: Keeping only even numbers
 
                   nums = [1, 2, 3, 4, 5, 6]
                   evens = list(filter(lambda x: x % 2 == 0, nums))
                   print(evens)  
                   # [2, 4, 6]
 
-                  🔹 3. reduce() → Reduce data to a single result
+                   3. reduce() → Reduce data to a single result
 
                   Syntax:
 
@@ -1403,7 +1382,7 @@
 
                   Applies function cumulatively (needs functools).
 
-                  ✅ Example: Multiplying all numbers
+                   Example: Multiplying all numbers
 
                   from functools import reduce
 
@@ -1428,7 +1407,7 @@
                   This allows the inner function to “remember” the state of the outer function even after the outer function has finished execution.
 
                   2. Decorators in Python
-                  ✅ What is a Decorator?
+                   What is a Decorator?
 
                   A decorator is a special type of function in Python that modifies the behavior of another function without changing its code.
 
