@@ -1,0 +1,351 @@
+1. Printing on Screen
+
+Q1 Introduction to the print() function in Python.
+
+The print() function in Python is a built-in function used to display output to the console or standard output device. It is a fundamental tool for programmers to communicate information, debug code, and present results during program execution. 
+
+print("Hello, World!")
+
+name = "Alice"
+age = 30
+print("Name:", name)
+print("Age:", age)
+
+Q2 Formatting outputs using f-strings and format().
+
+1. F-Strings (Formatted String Literals):
+Introduced in Python 3.6, f-strings are the recommended and most modern way to format strings. They offer a concise and readable syntax for embedding expressions inside string literals. 
+
+Syntax: Prefix the string with f or F and place variables or expressions directly within curly braces {}.
+
+name = "Alice"
+age = 30
+message = f"Hello, {name}! You are {age} years old."
+print(message)
+
+2. format() Method:
+The format() method provides another way to format strings, offering more control than older methods like % formatting.
+
+Syntax: Call the format() method on a string, using curly braces {} as placeholders for values. Pass the values as arguments to the format() method.
+
+name = "Bob"
+city = "New York"
+message = "{} lives in {}.".format(name, city)
+print(message)
+
+
+2. Reading Data from Keyboard
+
+Q1  Using the input() function to read user input from the keyboard.
+
+The input() function in Python is used to read user input from the keyboard. This function pauses the program execution, displays a prompt message (if provided), and waits for the user to type something and press Enter. The value entered by the user is then returned as a string. 
+Here's how to use the input() function:
+1. Basic Usage:
+
+user_input = input("Enter something: ")
+print("You entered:", user_input)
+
+2. Type Conversion:
+The input() function always returns a string, even if the user enters numbers. If you need to work with the input as a different data type (like an integer or a float), you must explicitly convert it using type casting. 
+
+age_str = input("Enter your age: ")
+age_int = int(age_str)  
+print("Your age is:", age_int)
+
+price_str = input("Enter the price: ")
+price_float = float(price_str) 
+print("The price is:", price_float)
+
+3. Handling Potential Errors during Type Conversion:
+When converting user input to a numeric type, it's good practice to include error handling (e.g., using a try-except block) to gracefully manage cases where the user enters non-numeric input.
+
+try:
+    number_str = input("Enter a number: ")
+    number_int = int(number_str)
+    print("You entered the number:", number_int)
+except ValueError:
+    print("Invalid input. Please enter a valid number.")
+
+Q2 Converting user input into different data types (e.g., int, float, etc.).
+
+Converting user input to different data types is a common task in programming. This process is often referred to as type casting or type conversion. Most programming languages provide built-in functions or operators to facilitate this.
+In Python:
+Python's input() function always returns a string. To use the input as a different data type, explicit conversion is required.
+
+# Converting to an integer
+user_age_str = input("Enter your age: ")
+user_age_int = int(user_age_str)
+print(f"Your age as an integer: {user_age_int}")
+
+# Converting to a float
+user_height_str = input("Enter your height in meters: ")
+user_height_float = float(user_height_str)
+print(f"Your height as a float: {user_height_float}")
+
+# Converting to a boolean (Note: non-empty strings are True, empty strings are False)
+user_response_str = input("Do you agree? (yes/no): ")
+user_response_bool = bool(user_response_str)
+print(f"Your response as a boolean: {user_response_bool}")
+
+3. Opening and Closing Files
+
+Q1 Opening files in different modes ('r', 'w', 'a', 'r+', 'w+').
+
+File handling in programming often involves opening files in specific modes to control how the file can be accessed and manipulated. The common modes are: 
+'r' (Read Mode):
+Opens a file for reading only.
+The file pointer is placed at the beginning of the file.
+Raises an error if the file does not exist.
+Writing to the file is not permitted in this mode.
+
+'w' (Write Mode):
+Opens a file for writing only.
+Creates the file if it does not exist.
+Truncates (clears all content) the file if it already exists.
+The file pointer is placed at the beginning of the file. 
+Reading from the file is not permitted in this mode. 
+
+'a' (Append Mode):
+Opens a file for writing, appending new content to the end of the file. 
+Creates the file if it does not exist.
+The file pointer is placed at the end of the file. 
+Reading from the file is not permitted in this mode. 
+
+'r+' (Read and Write Mode):
+Opens a file for both reading and writing.
+The file pointer is placed at the beginning of the file. 
+Raises an error if the file does not exist.
+Allows reading and then overwriting existing content or writing new content from the current pointer position.
+
+Q2 Using the open() function to create and access files.
+
+The open() function in Python is used to create and access files. It returns a file object, which can then be used to perform operations like reading, writing, or appending data.
+Syntax:
+
+file_object = open(file_path, mode)
+
+Parameters:
+file_path: The name of the file (e.g., "my_file.txt") or the full path to the file (e.g., "C:/Users/User/Documents/data.txt").
+mode: A string indicating how the file should be opened. Common modes include:
+"r" (read): Opens the file for reading. This is the default mode. Raises a FileNotFoundError if the file doesn't exist.
+"w" (write): Opens the file for writing. Creates the file if it doesn't exist. Overwrites the file's content if it already exists.
+"a" (append): Opens the file for appending. Creates the file if it doesn't exist. Adds new data to the end of the file without overwriting existing content.
+"x" (exclusive creation): Creates a new file and opens it for writing. Raises a FileExistsError if the file already exists.
+"r+" (read and write): Opens the file for both reading and writing.
+"w+" (write and read): Opens the file for both writing and reading. Overwrites the file if it exists.
+"a+" (append and read): Opens the file for both appending and reading.
+
+Q3 Closing files using close().
+
+Closing a file using the close() method is a fundamental operation in file handling, particularly in programming languages like Python.
+Purpose of close():
+The close() method is invoked on a file object to explicitly release the system resources associated with that file. This action ensures that:
+Data Persistence: Any buffered data that has not yet been written to the physical file is flushed and saved, preventing data loss.
+Resource Release: The operating system resources (like file handles) used by the open file are freed, making them available for other processes or files.
+File Integrity: It helps maintain the integrity of the file by ensuring that all operations are properly concluded.
+Syntax and Usage:
+To close a file, simply call the close() method on the file object after you have finished all read or write operations.
+
+# Open a file in write mode
+file_object = open("example.txt", "w")
+
+# Perform operations on the file (e.g., writing data)
+file_object.write("This is some text.")
+
+# Close the file
+file_object.close()
+
+Importance of Closing Files:
+Failing to close files can lead to several issues, including:
+Data Loss or Corruption: Unwritten data in buffers may not be saved.
+Resource Exhaustion: Leaving many files open can consume system resources, potentially leading to errors or performance degradation.
+File Locking Issues: Other programs or processes might be unable to access or modify the file if it remains open.
+
+
+4. Reading and Writing Files
+
+Q1 Reading from a file using read(), readline(), readlines().
+
+read()
+The read() method reads the entire content of a file and returns it as a single string. An optional argument, size, can be provided to specify the number of bytes (characters) to read from the file. If size is omitted, the entire file content is returned.
+
+readline()
+The readline() method reads a single line from the file, including the newline character (\n), and returns it as a string. Each subsequent call to readline() will read the next line in the file. An optional size argument can be used to limit the number of bytes read from that specific line.
+
+readlines()
+The readlines() method reads all lines from the file and returns them as a list of strings. Each element in the list represents a single line from the file, including the newline character. 
+
+Q2  Writing to a file using write() and writelines().
+
+1. write() method:
+Purpose: Writes a single string or a sequence of bytes to a file.
+Argument: Takes a single string or bytes object as an argument.
+Newline characters: Does not automatically add a newline character (\n) at the end of the string. If a newline is desired, it must be explicitly included in the string.
+
+2. writelines() method:
+Purpose: Writes a sequence (like a list or tuple) of strings to a file.
+Argument: Takes an iterable (e.g., a list, tuple) containing strings as an argument. 
+Newline characters: Does not automatically add newline characters between the strings in the iterable. Each string in the iterable is written directly to the file without any added separators. If each string should be on a new line, each string in the iterable must end with \n.
+
+5. Exception Handling
+
+Q1 Introduction to exceptions and how to handle them using try, except, and finally
+
+Exceptions are events that disrupt the normal flow of a program's execution. When an error occurs during program execution, Python raises an exception. If unhandled, this exception will cause the program to terminate abruptly. Exception handling allows a program to gracefully manage these errors, preventing crashes and providing more robust behavior.
+Python provides the try, except, and finally blocks for handling exceptions: 
+try block: This block contains the code that might potentially raise an exception. If an exception occurs within the try block, the remaining code in that block is skipped, and control is transferred to the appropriate except block.
+except block: This block specifies how to handle a particular type of exception. When an exception occurs in the try block, Python searches for an except block that matches the type of exception raised. If a match is found, the code within that except block is executed. Multiple except blocks can be used to handle different types of exceptions, or a general except block can catch any unspecific exception.
+finally block: This block contains code that will always be executed, regardless of whether an exception occurred in the try block or not. It is typically used for cleanup tasks, such as closing files or releasing resources, ensuring these operations are performed even if an error arises.
+
+Q2 Understanding multiple exceptions and custom exceptions
+
+Handling multiple exceptions involves catching and processing different types of errors that might occur within a try block. This can be achieved in several ways:
+Multiple catch blocks: You can use separate catch blocks for each specific exception type you want to handle. This allows for distinct error-handling logic for each exception. The order of catch blocks matters; more specific exceptions should be caught before more general ones.
+
+6. Class and Object (OOP Concepts)
+
+Q1 Understanding the concepts of classes, objects, attributes, and methods in Python.
+
+Class:
+A class serves as a blueprint or a template for creating objects. It defines the structure and behavior that its objects will possess. Think of it as a cookie cutter; all cookies made with that cutter will have the same shape, just as all objects created from a class will share the defined attributes and methods.
+
+Object:
+An object is a concrete instance of a class. It's a real-world entity created from the class blueprint, possessing its own unique set of attribute values while sharing the methods defined in the class. Using the cookie analogy, an object is an actual cookie baked from the cookie cutter.
+
+Methods:
+Methods are functions defined within a class that describe the actions or behaviors an object of that class can perform. They operate on the object's attributes. The first parameter of a method is always self, which refers to the instance of the object calling the method.
+
+7. Inheritance
+
+Q1 Single, Multilevel, Multiple, Hierarchical, and Hybrid inheritance in Python.
+
+Python supports various types of inheritance, enabling code reusability and establishing relationships between classes. The primary types are:
+Single Inheritance:
+A child class inherits from only one parent class. This is the simplest form of inheritance.
+Example: A Dog class inheriting from an Animal class.
+
+Multiple Inheritance:
+A child class inherits from multiple parent classes, combining their attributes and methods.
+Example: A Bat class inheriting from both Mammal and WingedAnimal.
+
+Multilevel Inheritance:
+A class inherits from a derived class, creating a chain of inheritance.
+Example: A SmartPhone class inheriting from Phone, which in turn inherits from Product.
+
+Hierarchical Inheritance:
+Multiple classes inherit from a single parent class. This creates a tree-like structure where a single base class has multiple specialized child classes.
+Example: Car and Motorcycle classes both inheriting from a Vehicle class.
+
+Hybrid Inheritance:
+A combination of two or more types of inheritance within a single program. It can involve mixing single, multiple, multilevel, and hierarchical inheritance. 
+Example: An ElectricCar class inheriting from Car (single/multilevel) and Electric (multiple).
+
+Q2 Using the super() function to access properties of the parent class
+
+
+The super() function in Python provides a way to access methods and properties of a parent or sibling class within a class hierarchy. It returns a proxy object representing the parent class, allowing you to call its methods or access its attributes.
+Common Usage:
+Calling the Parent Class's init Method.
+This is the most frequent use of super(). In a child class's constructor (__init__), you can call the parent's __init__ to ensure that inherited attributes are properly initialized.
+
+Calling Overridden Parent Class Methods.
+If a child class overrides a method from its parent, super() can be used to still access and execute the parent's version of that method within the child's implementation.
+
+8. Method Overloading and Overriding
+
+ Q1 Method overloading: defining multiple methods with the same name but different
+parameters.
+
+
+Method overloading is a feature in object-oriented programming that allows a class to have multiple methods with the same name but different parameters. This is a form of compile-time polymorphism. 
+The key aspects of method overloading are:
+Same Method Name: All overloaded methods share the same name within the same class.
+Different Parameters: The methods must differ in their method signature, which includes:
+Number of parameters: For example, one add method might take two integers, while another add method takes three integers.
+Data types of parameters: An add method could take two integers, while another add method takes two floating-point numbers.
+Order of parameters: If the types are the same, their order can differentiate the methods. For instance, calculate(int x, String y) is different from calculate(String y, int x).
+
+Q2 Method overriding: redefining a parent class method in the child class.
+
+Method overriding is a feature in object-oriented programming that allows a subclass (child class) to provide a specific implementation for a method that is already defined in its superclass (parent class). This means that a method in the child class has the same name, return type (or a compatible type in some languages), and parameters (signature) as a method in the parent class. 
+Key aspects of method overriding:
+Inheritance: Method overriding relies on inheritance, where a child class inherits methods from its parent class.
+Same Signature: The overriding method in the child class must have the same name, number and type of parameters, and return type as the overridden method in the parent class.
+Polymorphism (Runtime): Method overriding is a cornerstone of runtime polymorphism (also known as dynamic method dispatch). This means that when an overridden method is called on an object, the actual method executed is determined at runtime based on the object's actual type, not the reference type.
+Customization: It allows child classes to customize the behavior of inherited methods to suit their specific needs, while still maintaining the same method signature.
+super() Keyword: In many languages (like Python and Java), the super() keyword can be used within the overriding method in the child class to explicitly call and execute the parent class's version of the method. This allows for extending or modifying the parent's behavior rather than completely replacing it.
+
+class Animal:
+    def speak(self):
+        print("Animal makes a sound")
+
+class Dog(Animal):
+    def speak(self):  # Overriding the speak method
+        print("Woof!")
+
+class Cat(Animal):
+    def speak(self):  # Overriding the speak method
+        print("Meow!")
+
+animal = Animal()
+dog = Dog()
+cat = Cat()
+
+9. SQLite3 and PyMySQL (Database Connectors)
+
+Q1 Introduction to SQLite3 and PyMySQL for database connectivity.   
+
+SQLite3
+SQLite3 is a self-contained, serverless, and file-based relational database engine. It is embedded directly into applications, meaning it does not require a separate server process to run. Python's standard library includes the sqlite3 module, eliminating the need for external installations to use SQLite.
+Key features of SQLite3:
+Serverless: No separate server process is required; the database is a single file on disk.
+Self-contained: The entire database is contained within a single file.
+Zero-configuration: No setup or administration is needed.
+ACID-compliant: Supports Atomicity, Consistency, Isolation, and Durability.
+Lightweight: Requires minimal system resources.
+
+PyMySQL
+PyMySQL is a Pure Python MySQL client library, allowing Python applications to connect and interact with MySQL databases. Unlike SQLite, MySQL is a client-server relational database management system, meaning it requires a separate MySQL server to be running.
+Key features of PyMySQL:
+MySQL connectivity: Enables Python applications to connect to MySQL servers.
+DB-API 2.0 compliant: Adheres to Python's standard database API specification.
+Pure Python: Written entirely in Python, simplifying installation and compatibility.
+
+Q2 Creating and executing SQL queries from Python using these connectors
+
+1. Install the Database Connector:
+First, install the appropriate Python connector library for your specific database (e.g., mysql-connector-python for MySQL, psycopg2 for PostgreSQL, sqlite3 for SQLite, python-oracledb for Oracle, pyodbc for various ODBC-compliant databases). This is typically done using pip:
+
+2. Establish a Database Connection:
+Import the connector library and use its connect() method to establish a connection to your database. You will need to provide connection details such as host, user, password, and database name.
+
+3. Create a Cursor Object:
+A cursor object acts as an interface for executing SQL queries and fetching results. Create a cursor from your established connection:
+
+4. Execute SQL Queries:
+Use the cursor's execute() method to run your SQL queries. SQL queries are typically provided as strings.
+
+5. Fetch Results (for SELECT queries):
+If you executed a SELECT query, you can fetch the results using methods like fetchone(), fetchmany(), or fetchall():
+
+6. Commit Changes (for DML operations):
+For Data Manipulation Language (DML) operations (INSERT, UPDATE, DELETE), you need to commit the changes to the database using connection.commit():
+
+10. Search and Match Functions
+
+Q1  Using re.search() and re.match() functions in Python’s re module for pattern
+matching.
+
+The re module in Python provides tools for working with regular expressions, including re.search() and re.match() for pattern matching.
+re.match(pattern, string, flags=0)
+re.match() attempts to match a pattern only at the beginning of a string. 
+If the pattern is found at the start of the string, it returns a Match object. 
+
+
+If the pattern is not found at the beginning of the string, it returns None. re.search(pattern, string, flags=0)
+re.search() scans the entire string for the first occurrence of a pattern.
+It returns a Match object if the pattern is found anywhere in the string.
+If the pattern is not found, it returns None. 
+
+
+
