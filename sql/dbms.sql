@@ -8,10 +8,10 @@ create table student(
     email varchar(20)
     );
     
-select* from student
+select* from student;
 
 
-create table employee (
+ create table employee (
     id INT PRIMARY KEY,
     name VARCHAR(100) NOT NULL,
     email VARCHAR(100) UNIQUE NOT NULL,
@@ -21,8 +21,7 @@ create table employee (
     date_of_join DATE
 	);
     
-INSERT INTO employee (id, name, email, contact_no, department, salary, date_of_join) VALUES(
-(1, 'Aarav Sharma', 'aarav.sharma@example.com', '9876543210', 'HR', 45000, '2021-03-15'),
+INSERT INTO employee (id, name, email, contact_no, department, salary, date_of_join) VALUES
 (2, 'Priya Singh', 'priya.singh@example.com', '9123456780', 'Finance', 52000, '2020-11-20'),
 (3, 'Rohan Patel', 'rohan.patel@example.com', '9812345678', 'IT', 68000, '2019-06-10'),
 (4, 'Neha Gupta', 'neha.gupta@example.com', '9900123456', 'Marketing', 47000, '2022-01-05'),
@@ -46,6 +45,7 @@ INSERT INTO employee (id, name, email, contact_no, department, salary, date_of_j
 (22, 'Sneha Kulkarni', 'sneha.kulkarni@example.com', '9900987654', 'Admin', 40000, '2021-02-18'),
 (23, 'Mohit Chauhan', 'mohit.chauhan@example.com', '9875678901', 'IT', 73000, '2018-08-03'),
 (24, 'Tanya Shah', 'tanya.shah@example.com', '9655012345', 'HR', 46000, '2020-07-27'),
-(25, 'Parth Trivedi', 'parth.trivedi@example.com', 'parth.trivedi@example.com', '9345678901', 'Marketing', 48000, '2023-04-12')
-);
+(25, 'Parth Trivedi', 'parth.trivedi@example.com', '9345678901', 'Marketing', 48000, '2023-04-12');
+
+
 
