@@ -47,5 +47,102 @@ INSERT INTO employee (id, name, email, contact_no, department, salary, date_of_j
 (24, 'Tanya Shah', 'tanya.shah@example.com', '9655012345', 'HR', 46000, '2020-07-27'),
 (25, 'Parth Trivedi', 'parth.trivedi@example.com', '9345678901', 'Marketing', 48000, '2023-04-12');
 
+/* create epmloyee and department table */
+
+create table departement(
+	d_id int primary key auto_increment,
+    d_name varchar(20)
+);
+
+create table emp(
+	e_id int primary key auto_increment,
+    e_name varchar(20),
+    e_email varchar(30),
+    e_age int,
+    salary int,
+    d_id int,foreign key(d_id) references departement(d_id)
+
+);
+
+insert into emp (e_name,e_email,e_age,salary) values
+("ibrahim","ibrahim@gmail.com","76","3124"),
+("jenil","jenil@gmail.com","35","79681704"),
+("huzaifa","huzaifa@gmail.com","20","978"),
+("taher","taher@gmail.com","25","78568"),
+("mayank","mayank@gmail.com","12","76657"),
+("jay","jay@gmail.com","21","12345"),
+("sachi","sachi@gmail.com","45","235"),
+("vaishnavi","vaishnavi@gmail.com","34","4986"),
+("mufaddal","mufaddal@gmail.com","12","764");
+
+
+insert into departement(d_name) values
+('HR'),
+('Finance'),
+('IT'),
+('Marketing'),
+('Sales');
+
+
+select  e.e_name,e.e_email,e.e_age,e.salary , d_name from emp e join departement d on e.d_id = d.d_id;
+
+/*category and * product table */
+
+CREATE TABLE category (
+    cat_id INT PRIMARY KEY AUTO_INCREMENT,
+    cat_name VARCHAR(50) NOT NULL
+);
+
+INSERT INTO category (cat_name) VALUES
+('Electronics'),
+('Furniture'),
+('Clothing'),
+('Groceries'),
+('Sports');
+
+
+CREATE TABLE product (
+    prod_id INT PRIMARY KEY AUTO_INCREMENT,
+    prod_name VARCHAR(100) NOT NULL,
+    price DECIMAL(10,2),
+    quantity INT,
+    cat_id INT, FOREIGN KEY (cat_id) REFERENCES category(cat_id)
+);
+
+
+
+INSERT INTO product (prod_name, price, quantity, cat_id) VALUES
+('Laptop', 55000.00, 10, 1),
+('Smartphone', 25000.00, 15, 1),
+('Sofa Set', 30000.00, 5, 2),
+('Dining Table', 18000.00, 3, 2),
+('T-Shirt', 799.00, 50, 3),
+('Jeans', 1299.00, 40, 3),
+('Rice 10kg', 550.00, 100, 4),
+('Cooking Oil 1L', 160.00, 80, 4),
+('Football', 999.00, 20, 5),
+('Tennis Racket', 2500.00, 12, 5);
+
+
+
+SELECT 
+    p.prod_id,
+    p.prod_name,
+    p.price,
+    p.quantity,
+    c.cat_name AS category_name
+FROM product p
+JOIN category c ON p.cat_id = c.cat_id;
+
+
+
+
+
+
+
+
+
+
+
 
 
