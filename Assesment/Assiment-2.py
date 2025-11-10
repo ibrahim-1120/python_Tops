@@ -11,13 +11,13 @@ class Post:
         self.content = content.strip()
 
     def filename(self):
-        # """Generate a valid filename based on username and title."""
+        
         safe_username = "".join(c for c in self.username if c.isalnum() or c in ('_', '-'))
         safe_title = "".join(c for c in self.title if c.isalnum() or c in ('_', '-'))
         return f"{safe_username}_{safe_title}.txt"
 
     def save(self):
-        # """Save the post to a text file."""
+       
         if not self.username or not self.title or not self.content:
             raise ValueError("All fields must be filled out before saving.")
         
@@ -114,7 +114,7 @@ class MiniBlogApp:
             self.text_view.insert(tk.END, content)
             self.text_view.config(state='disabled')
         except IndexError:
-            pass  # No item selected
+            pass  
         except FileNotFoundError:
             messagebox.showerror("Error", "File not found!")
         except Exception as e:
