@@ -24,39 +24,65 @@
             var passerr = document.getElementById("passerr")
             var cpasserr = document.getElementById("cpasserr")
 
+            var btn = document.getElementById("sbtn")
+
 
             var nameexp = /^[a-zA-Z]{1,10}$/
+            var emailexp = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
+
 
 
             if (name == "" || name == null) {
                 nameerr.innerHTML = "Name required"
+                btn.disabled =true
             }
 
             else if (!nameexp.test(name)) {
                 nameerr.innerHTML = "only  chars allowd !!"
+                btn.disabled = true
             }
 
 
             else {
                 nameerr.innerHTML = ""
+                btn.disabled = false
             }
 
             if (email == "" || email == null) {
                 emailerr.innerHTML = "Email required"
-            } else {
+                btn.disabled = true 
+            }
+             else if (!emailexp.test(email)) {
+                emailerr.innerHTML = "Invalid email"
+                btn.disabled = true
+            }
+            else {
                 emailerr.innerHTML = ""
+                btn.disabled = false
             }
 
             if (pass == "" || pass == null) {
                 passerr.innerHTML = "passward required"
-            } else {
+                btn.disabled = true
+            }
+             else {
                 passerr.innerHTML = ""
+                btn.disabled = false
             }
 
-            if (cpass == "" || cpass == null) {
+            if (cpass == "" || cpass == null) 
+            {
                 cpasserr.innerHTML = "conform passward required"
-            } else {
+                btn.disabled = true
+            } 
+            else if(pass!=cpass){
+                cpasserr.innerHTML="cpass must be same as passward"
+                btn.disabled = true
+
+            }
+            else {
                 cpasserr.innerHTML = ""
+                btn.disabled = false
             }
 
         }
@@ -101,7 +127,7 @@
                         <span id="cpasserr" class="text-danger"></span>
                     </div>
                     <br>
-                    <input type="submit" class="btn btn-success">
+                    <input type="submit" class="btn btn-success" id="sbtn">
                     <input type="reset" class="btn btn-primary  ">
                 </form>
             </div>
