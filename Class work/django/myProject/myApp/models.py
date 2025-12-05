@@ -7,3 +7,7 @@ class student(models.Model):
     last_name = models.CharField(max_length=10)
     email = models.EmailField(unique=True)
 
+class course(models.Model):
+    title = models.CharField(max_length=20)
+    description = models.TextField()
+
