@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>display</title>
+</head>
+
+<body>
+    <h1 align="center">Student Detail</h1>
+    <table align="center" border="2" cellspacing="10" cellpadding="5">
+        <tr>
+            <th>Id</th>
+            <th>Name</th>
+            <th>Email</th>
+            <th>Age</th>
+            <th>Phone</th>
+            <td colspan="2">Action</td>
+        </tr>
+        {% for st in students%}
+        <tr>
+            <td>{{forloop.counter}}</td>
+            <td>{{st.name}}</td>
+            <td>{{st.email}}</td>
+            <td>{{st.age}}</td>
+            <td>{{st.phone}}</td>
+            <td><a href="{%url 'edit'%}?id={{st.id}}">Edit</a></td>
+            <td><a href="{%url 'delete'%}?id={{st.id}}">Delete</a></td>
+        </tr>
+        {%endfor%}
+
+    </table>
+
+    <h3 align="center"><a href="{%url 'index'%}">Back to register</a></h3>
+</body>
+
+</html>
