@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Display</title>
+</head>
+
+<body>
+    <h1 align="center">Stocks available</h1>
+    <table align="center" border="1" cellspacing="10" cellpadding="5">
+        <tr>
+            <th>Id</th>
+            <th>Car name</th>
+            <th>Car model</th>
+            <th>Car type</th>
+            <th>Car price</th>
+            <th colspan="2">Action</th>
+        </tr>
+        {%for ca in garage%}
+        <tr>
+            <td>{{forloop.counter}}</td>
+        </tr>
+        {%endfor%}
+
+    </table>
+    <h4><a href="{%url 'index'%}">Press to add stock</a></h4>
+</body>
+
+</html>
