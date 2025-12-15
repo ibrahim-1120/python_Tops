@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>register</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
+</head>
+
+<body>
+    <div class="container">
+        <div class="row">
+            <div class="col-5 mx-auto mt-3 p-5 card bg-light">
+                <h1>Registration</h1>
+                <hr>
+                <span>{{err}}</span>
+                <span>{{msg}}</span>
+                <form action="" method="post">
+                    {%csrf_token%}
+                    <input type="text" placeholder="Enter first name" name="fname" class="form form-control">
+                    <br><br>
+                    <input type="text" placeholder="Enter last name" name="lname" class="form form-control">
+                    <br><br>
+                    <input type="text" placeholder=" Enter username" name="username" class="form form-control">
+                    <br><br>
+                    <input type="text" placeholder="Enter passward" name="password" class="form form-control">
+                    <br><br>
+                    <input type="submit" class="btn btn-success">
+                    <input type="reset" class="btn btn-primary">
+                    <br><br>
+                    <a href="{%url 'index'%}" class="btn btn-danger">Login here</a>
+                </form>
+
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>
