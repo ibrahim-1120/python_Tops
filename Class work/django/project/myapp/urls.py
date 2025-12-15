@@ -12,5 +12,9 @@ urlpatterns=[
     path('testimonial',testimonial,name='testimonial'),
     path('login',login,name='login'),
     path('registration',registration,name='registration'),
-    path('table',table,name='table')
+    path('table',table,name='table'),
+
+    path('user_login',user_login,name='user_login'),
+    path('user_registration',user_registration,name='user_registration'),
+    path('user_logout',user_logout,name='user_logout')
 ]

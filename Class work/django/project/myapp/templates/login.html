@@ -29,16 +29,20 @@
                         <h2 class="text-center mb-4 text-primary">
                             <i class="fa fa-user me-2"></i>Login
                         </h2>
+                        <br>
+                        <span>{{err}}</span>
 
-                        <form>
+                        <form method="post" action="{%url 'user_login'%}"> 
+                            {%csrf_token%}
                             <div class="mb-3">
                                 <label class="form-label">Username / Email</label>
-                                <input type="text" class="form-control" placeholder="Enter username or email">
+                                <input type="text" class="form-control" placeholder="Enter username or email"
+                                    name="uname">
                             </div>
 
                             <div class="mb-3">
                                 <label class="form-label">Password</label>
-                                <input type="password" class="form-control" placeholder="Enter password">
+                                <input type="password" class="form-control" placeholder="Enter password" name="pass">
                             </div>
 
                             <div class="d-grid">

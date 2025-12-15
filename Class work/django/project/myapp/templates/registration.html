@@ -29,38 +29,31 @@
                         <h2 class="text-center mb-4 text-primary">
                             <i class="fa fa-user-plus me-2"></i>Register
                         </h2>
-
-                        <form>
+                        <br>
+                        <span>{{msg}}</span>
+                        <form method="post" action="{%url 'user_registration'%}">
+                            {%csrf_token%}
                             <div class="row g-3">
-                                <div class="col-md-6">
-                                    <label class="form-label">First Name</label>
-                                    <input type="text" class="form-control" placeholder="First name">
-                                </div>
-
-                                <div class="col-md-6">
-                                    <label class="form-label">Last Name</label>
-                                    <input type="text" class="form-control" placeholder="Last name">
-                                </div>
-
                                 <div class="col-12">
                                     <label class="form-label">Username</label>
-                                    <input type="text" class="form-control" placeholder="Username">
+                                    <input type="text" class="form-control" placeholder="Username" name="uname">
                                 </div>
 
                                 <div class="col-12">
                                     <label class="form-label">Email</label>
-                                    <input type="email" class="form-control" placeholder="Email address">
+                                    <input type="email" class="form-control" placeholder="Email address" name="email">
                                 </div>
 
                                 <div class="col-md-6">
                                     <label class="form-label">Password</label>
-                                    <input type="password" class="form-control" placeholder="Password">
+                                    <input type="password" class="form-control" placeholder="Password" name="pass">
                                 </div>
 
-                                <div class="col-md-6">
+                                <!-- <div class="col-md-6">
                                     <label class="form-label">Confirm Password</label>
-                                    <input type="password" class="form-control" placeholder="Confirm password">
-                                </div>
+                                    <input type="password" class="form-control" placeholder="Confirm password"
+                                        name="cpass">
+                                </div> -->
                             </div>
 
                             <div class="d-grid mt-4">
