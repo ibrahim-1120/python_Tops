@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <h1 align="center">Student Detail</h1>
+    <table align="center" border="2" cellspacing="10" cellpadding="5">
+        <tr>
+            <th>Id</th>
+            <th>Name</th>
+            <th>Email</th>
+            <th>age</th>
+            <th>image</th>
+
+        </tr>
+        {%for st in students%}
+        <tr>
+            <td>{{forloop.counter}}</td>
+            <td>{{st.name}}</td>
+            <td>{{st.email}}</td>
+            <td>{{st.age}}</td>
+            <td><img src="/media/{{pt.photo}}" alt="pl" height="50" width="50"></td>
+        </tr>
+        {%endfor%}
+    </table>
+</body>
+
+</html>
