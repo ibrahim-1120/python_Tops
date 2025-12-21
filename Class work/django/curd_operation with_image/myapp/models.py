@@ -5,5 +5,5 @@ from django.db import models
 class student(models.Model):
     name = models.CharField(max_length=20)
     email = models.EmailField()
-    age = models.PositiveIntegerField()
-    image= models.ImageField(upload_to='image',default='test.jpg')
+    age = models.IntegerField()
+    image = models.ImageField(upload_to="image",default= 'test.jpg')

@@ -11,9 +11,9 @@ def register(request):
     name=request.POST.get('name')
     email=request.POST.get('email')
     age=request.POST.get('age')
-    photo =request.FILES['photo']
+    image =request.FILES['image']
     if not id:
-        student.objects.create(name=name, email=email, age=age,photo=photo)
+        student.objects.create(name=name, email=email, age=age,image=image)
         return render (request,'index.html')
 
     else:

@@ -8,7 +8,7 @@
 </head>
 
 <body>
-    <form action="{%url 'register'%}" method="POST">
+    <form action="{%url 'register'%}" method="POST" enctype="multipart/form-data">
         {%csrf_token%}
         <input type="hidden" value="{{st.id}}">
         <input type="text" placeholder="Enter name" name="name" value="{{st.name}}">
@@ -19,7 +19,7 @@
         <br><br>
         <input type="submit">
         <br><br>
-        <input type="file" name="photo">
+        <input type="file" name="image">
 
         <a href="{%url 'display'%}">Data</a>
 
