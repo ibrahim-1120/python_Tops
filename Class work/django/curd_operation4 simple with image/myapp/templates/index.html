@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <h1 align="center">Registration</h1>
+    <br>
+    <span>{{sucess}}</span>
+    <div align="center">
+        <form action="{%url 'register'%}" method="post" enctype="multipart/form-data">
+            {%csrf_token%}
+            <input type="hidden" name="id" value="{{st.id}}">
+            <input type="text" placeholder="Enter name" name="name" value="{{st.name}}">
+            <br><br>
+            <input type="text" placeholder="Enter email" name="email" value="{{st.email}}">
+            <br><br>
+            <input type="text" placeholder="Enter phone" name="phone" value="{{st.phone}}">
+            <br><br>
+            {%if st.image%}
+            <img src="/media/{{st.image}}" alt="" width="50px" height="50px">
+            <span>{{st.image}}</span>
+            {%endif%}
+            <input type="file" name="image">
+            <br><br>
+            <input type="submit">
+            <br><br>
+            <a href="{%url 'display'%}">Data</a>
+        </form>
+    </div>
+</body>
+
+</html>

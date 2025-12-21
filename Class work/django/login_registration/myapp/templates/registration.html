@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Register</title>
+    <link rel="stylesheet" href="/static/style.css">
+</head>
+
+<body>
+
+
+
+    <div class="auth-container">
+        <div class="auth-card">
+            <h2>Create Account</h2>
+            <p class="subtitle">Register to get started</p>
+            <br>
+            <span>{{err}}</span>
+            <span>{{msg}}</span>
+            <br>
+
+            <form action="" method="post">
+                {%csrf_token%}
+                <div class="input-box">
+                    <input type="text" required name="fname">
+                    <label>fname</label>
+                </div>
+
+                <div class="input-box">
+                    <input type="text" required name="lname">
+                    <label>lname</label>
+                </div>
+
+                <div class="input-box">
+                    <input type="text" required name="username">
+                    <label>User name</label>
+                </div>
+
+                <div class="input-box">
+                    <input type="password" required name="password">
+                    <label>Password</label>
+                </div>
+
+
+                <button type="submit">Register</button>
+
+                <p class="switch">
+                    Already have an account?
+                    <a href="{%url 'index'%}">Login</a>
+                </p>
+            </form>
+        </div>
+    </div>
+
+
+</body>
+
+</html>
