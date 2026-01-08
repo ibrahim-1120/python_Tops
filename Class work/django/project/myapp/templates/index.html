@@ -23,13 +23,26 @@
     <link rel="stylesheet" href="/static/css/owl.carousel.min.css" type="text/css">
     <link rel="stylesheet" href="/static/css/slicknav.min.css" type="text/css">
     <link rel="stylesheet" href="/static/css/style.css" type="text/css">
+
+    <link rel="stylesheet"
+        href="https://cdn-uicons.flaticon.com/2.0.0/uicons-regular-straight/css/uicons-regular-straight.css" />
+
+    <!--=============== SWIPER CSS ===============-->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+
+    <!--=============== CSS ===============-->
+    <link rel="stylesheet" href="static/assets/css/styles.css" />
+
+    <script src="https://code.jquery.com/jquery-3.7.1.slim.js"
+        integrity="sha256-UgvvN8vBkgO0luPSUl2s8TIlOSYRoGFAX4jlCIm9Adc=" crossorigin="anonymous"></script>
+
 </head>
 
 <body>
     <!-- Page Preloder -->
-    <div id="preloder">
+    <!-- <div id="preloder">
         <div class="loader"></div>
-    </div>
+    </div> -->
 
     <!-- Offcanvas Menu Begin -->
     <div class="offcanvas-menu-overlay"></div>
@@ -71,21 +84,27 @@
                             <li><a href="{%url 'blog'%}">Blog</a></li>
                             <li><a href="{%url 'contact'%}">Contact</a></li>
                             <li>
-                                Hi
-                                {{user}}!
-
-                                <a href="{%url 'logout'%}">Logout</a>
+                                <a href="{%url 'logout'%}">logout</a>
                             </li>
+                            {%if user.is_authenticated%}
+                            <li>
+                                Hi{{user}}!
+                            </li>
+                            {%else%}
+                            <li>
+                                <a href="{%url 'home'%}">Login</a>
+                            </li>
+                            {%endif%}
                         </ul>
                     </nav>
                 </div>
                 <div class="col-lg-3">
                     <div class="header__right">
-                    
+
                         <div class="header__right__auth">
                             <a href="{%url 'home'%}">login</a>
                         </div>
-                       
+
                         <ul class="header__right__widget">
                             <li><span class="icon_search search-switch"></span></li>
 
@@ -104,12 +123,12 @@
     </header>
     <!-- Header Section End -->
 
-    <!-- Categories Section Begin -->
+    <!--  Section Begin -->
     <section class="categories">
         <div class="container-fluid">
             <div class="row">
                 <div class="col-lg-6 p-0">
-                    <div class="categories__item categories__large__item set-bg"
+                    <!-- <div class="categories__item categories__large__item set-bg"
                         data-setbg="/static/img/categories/category-1.jpg">
                         <div class="categories__text">
                             <h1>Women’s fashion</h1>
@@ -117,7 +136,7 @@
                                 edolore magna aliquapendisse ultrices gravida.</p>
 
                         </div>
-                    </div>
+                    </div> -->
                 </div>
                 <div class="col-lg-6">
                     <div class="row">
@@ -162,221 +181,46 @@
             </div>
         </div>
     </section>
-    <!-- Categories Section End -->
+    <!--  Section End -->
 
-    <!-- Product Section Begin -->
-    <section class="product spad">
-        <div class="container">
-            <div class="row">
-                <div class="col-lg-4 col-md-4">
-                    <div class="section-title">
-                        <h4>New product</h4>
-                    </div>
-                </div>
-                <div class="col-lg-8 col-md-8">
-                    <ul class="filter__controls">
-                        <li class="active" data-filter="*">All</li>
-                        <li data-filter=".women">Women’s</li>
-                        <li data-filter=".men">Men’s</li>
-                        <li data-filter=".kid">Kid’s</li>
-                        <li data-filter=".accessories">Accessories</li>
-                        <li data-filter=".cosmetic">Cosmetics</li>
-                    </ul>
-                </div>
+    <!--CATEGORIES Section Begin -->
+
+    <section class="categories container section">
+        <h3 class="section__title"><span>Popular</span> Categories</h3>
+        <div class="categories__container swiper">
+            <div class="swiper-wrapper" id="catdata">
+
+
+
             </div>
-            <div class="row property__gallery">
-                <div class="col-lg-3 col-md-4 col-sm-6 mix women">
-                    <div class="product__item">
-                        <div class="product__item__pic set-bg" data-setbg="/static/img/product/product-1.jpg">
-                            <div class="label new">New</div>
-                            <ul class="product__hover">
-                                <li><a href="/static/img/product/product-1.jpg" class="image-popup"><span
-                                            class="arrow_expand"></span></a></li>
-                                <li><a href="#"><span class="icon_heart_alt"></span></a></li>
-                                <li><a href="{%url 'cart'%}"><span class="icon_bag_alt"></span></a></li>
-                            </ul>
-                        </div>
-                        <div class="product__item__text">
-                            <h6><a href="#">Buttons tweed blazer</a></h6>
-                            <div class="rating">
-                                <i class="fa fa-star"></i>
-                                <i class="fa fa-star"></i>
-                                <i class="fa fa-star"></i>
-                                <i class="fa fa-star"></i>
-                                <i class="fa fa-star"></i>
-                            </div>
-                            <div class="product__price">$ 59.0</div>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-3 col-md-4 col-sm-6 mix men">
-                    <div class="product__item">
-                        <div class="product__item__pic set-bg" data-setbg="/static/img/product/product-2.jpg">
-                            <ul class="product__hover">
-                                <li><a href="/static/img/product/product-2.jpg" class="image-popup"><span
-                                            class="arrow_expand"></span></a></li>
-                                <li><a href="#"><span class="icon_heart_alt"></span></a></li>
-                                <li><a href="{%url 'cart'%}"><span class="icon_bag_alt"></span></a></li>
-                            </ul>
-                        </div>
-                        <div class="product__item__text">
-                            <h6><a href="#">Flowy striped skirt</a></h6>
-                            <div class="rating">
-                                <i class="fa fa-star"></i>
-                                <i class="fa fa-star"></i>
-                                <i class="fa fa-star"></i>
-                                <i class="fa fa-star"></i>
-                                <i class="fa fa-star"></i>
-                            </div>
-                            <div class="product__price">$ 49.0</div>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-3 col-md-4 col-sm-6 mix accessories">
-                    <div class="product__item">
-                        <div class="product__item__pic set-bg" data-setbg="/static/img/product/product-3.jpg">
-                            <div class="label stockout">out of stock</div>
-                            <ul class="product__hover">
-                                <li><a href="/static/img/product/product-3.jpg" class="image-popup"><span
-                                            class="arrow_expand"></span></a></li>
-                                <li><a href="#"><span class="icon_heart_alt"></span></a></li>
-                                <li><a href="#"><span class="icon_bag_alt"></span></a></li>
-                            </ul>
-                        </div>
-                        <div class="product__item__text">
-                            <h6><a href="#">Cotton T-Shirt</a></h6>
-                            <div class="rating">
-                                <i class="fa fa-star"></i>
-                                <i class="fa fa-star"></i>
-                                <i class="fa fa-star"></i>
-                                <i class="fa fa-star"></i>
-                                <i class="fa fa-star"></i>
-                            </div>
-                            <div class="product__price">$ 59.0</div>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-3 col-md-4 col-sm-6 mix cosmetic">
-                    <div class="product__item">
-                        <div class="product__item__pic set-bg" data-setbg="/static/img/product/product-4.jpg">
-                            <ul class="product__hover">
-                                <li><a href="/static/img/product/product-4.jpg" class="image-popup"><span
-                                            class="arrow_expand"></span></a></li>
-                                <li><a href="#"><span class="icon_heart_alt"></span></a></li>
-                                <li><a href="#"><span class="icon_bag_alt"></span></a></li>
-                            </ul>
-                        </div>
-                        <div class="product__item__text">
-                            <h6><a href="#">Slim striped pocket shirt</a></h6>
-                            <div class="rating">
-                                <i class="fa fa-star"></i>
-                                <i class="fa fa-star"></i>
-                                <i class="fa fa-star"></i>
-                                <i class="fa fa-star"></i>
-                                <i class="fa fa-star"></i>
-                            </div>
-                            <div class="product__price">$ 59.0</div>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-3 col-md-4 col-sm-6 mix kid">
-                    <div class="product__item">
-                        <div class="product__item__pic set-bg" data-setbg="/static/img/product/product-5.jpg">
-                            <ul class="product__hover">
-                                <li><a href="/static/img/product/product-5.jpg" class="image-popup"><span
-                                            class="arrow_expand"></span></a></li>
-                                <li><a href="#"><span class="icon_heart_alt"></span></a></li>
-                                <li><a href="#"><span class="icon_bag_alt"></span></a></li>
-                            </ul>
-                        </div>
-                        <div class="product__item__text">
-                            <h6><a href="#">Fit micro corduroy shirt</a></h6>
-                            <div class="rating">
-                                <i class="fa fa-star"></i>
-                                <i class="fa fa-star"></i>
-                                <i class="fa fa-star"></i>
-                                <i class="fa fa-star"></i>
-                                <i class="fa fa-star"></i>
-                            </div>
-                            <div class="product__price">$ 59.0</div>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-3 col-md-4 col-sm-6 mix women men kid accessories cosmetic">
-                    <div class="product__item sale">
-                        <div class="product__item__pic set-bg" data-setbg="/static/img/product/product-6.jpg">
-                            <div class="label sale">Sale</div>
-                            <ul class="product__hover">
-                                <li><a href="/static/img/product/product-6.jpg" class="image-popup"><span
-                                            class="arrow_expand"></span></a></li>
-                                <li><a href="#"><span class="icon_heart_alt"></span></a></li>
-                                <li><a href="#"><span class="icon_bag_alt"></span></a></li>
-                            </ul>
-                        </div>
-                        <div class="product__item__text">
-                            <h6><a href="#">Tropical Kimono</a></h6>
-                            <div class="rating">
-                                <i class="fa fa-star"></i>
-                                <i class="fa fa-star"></i>
-                                <i class="fa fa-star"></i>
-                                <i class="fa fa-star"></i>
-                                <i class="fa fa-star"></i>
-                            </div>
-                            <div class="product__price">$ 49.0 <span>$ 59.0</span></div>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-3 col-md-4 col-sm-6 mix women men kid accessories cosmetic">
-                    <div class="product__item">
-                        <div class="product__item__pic set-bg" data-setbg="/static/img/product/product-7.jpg">
-                            <ul class="product__hover">
-                                <li><a href="/static/img/product/product-7.jpg" class="image-popup"><span
-                                            class="arrow_expand"></span></a></li>
-                                <li><a href="#"><span class="icon_heart_alt"></span></a></li>
-                                <li><a href="#"><span class="icon_bag_alt"></span></a></li>
-                            </ul>
-                        </div>
-                        <div class="product__item__text">
-                            <h6><a href="#">Contrasting sunglasses</a></h6>
-                            <div class="rating">
-                                <i class="fa fa-star"></i>
-                                <i class="fa fa-star"></i>
-                                <i class="fa fa-star"></i>
-                                <i class="fa fa-star"></i>
-                                <i class="fa fa-star"></i>
-                            </div>
-                            <div class="product__price">$ 59.0</div>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-3 col-md-4 col-sm-6 mix women men kid accessories cosmetic">
-                    <div class="product__item sale">
-                        <div class="product__item__pic set-bg" data-setbg="/static/img/product/product-8.jpg">
-                            <div class="label">Sale</div>
-                            <ul class="product__hover">
-                                <li><a href="/static/img/product/product-8.jpg" class="image-popup"><span
-                                            class="arrow_expand"></span></a></li>
-                                <li><a href="#"><span class="icon_heart_alt"></span></a></li>
-                                <li><a href="#"><span class="icon_bag_alt"></span></a></li>
-                            </ul>
-                        </div>
-                        <div class="product__item__text">
-                            <h6><a href="#">Water resistant backpack</a></h6>
-                            <div class="rating">
-                                <i class="fa fa-star"></i>
-                                <i class="fa fa-star"></i>
-                                <i class="fa fa-star"></i>
-                                <i class="fa fa-star"></i>
-                                <i class="fa fa-star"></i>
-                            </div>
-                            <div class="product__price">$ 49.0 <span>$ 59.0</span></div>
-                        </div>
-                    </div>
-                </div>
+
+            <div class="swiper-button-prev">
+                <i class="fi fi-rs-angle-left"></i>
+            </div>
+            <div class="swiper-button-next">
+                <i class="fi fi-rs-angle-right"></i>
             </div>
         </div>
     </section>
-    <!-- Product Section End -->
+    <!-- CATEGORIES Section End -->
+
+    <!-- product section start  -->
+    <section class="products container section">
+        <div class="tab__btns">
+            <h2>Products</h2>
+        </div>
+
+        <div class="tab__items">
+            <div class="tab__item active-tab" content id="featured">
+                <div class="products__container grid" id="prodata">
+
+
+                </div>
+            </div>
+
+        </div>
+    </section>
+    <!-- product section end -->
 
     <!-- Banner Section Begin -->
     <section class="banner set-bg" data-setbg="/static/img/banner/banner-1.jpg">
@@ -665,62 +509,7 @@
     </section>
     <!-- Services Section End -->
 
-    <!-- Instagram Begin -->
-    <div class="instagram">
-        <div class="container-fluid">
-            <div class="row">
-                <div class="col-lg-2 col-md-4 col-sm-4 p-0">
-                    <div class="instagram__item set-bg" data-setbg="/static/img/instagram/insta-1.jpg">
-                        <div class="instagram__text">
-                            <i class="fa fa-instagram"></i>
-                            <a href="#">@ ashion_shop</a>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-2 col-md-4 col-sm-4 p-0">
-                    <div class="instagram__item set-bg" data-setbg="/static/img/instagram/insta-2.jpg">
-                        <div class="instagram__text">
-                            <i class="fa fa-instagram"></i>
-                            <a href="#">@ ashion_shop</a>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-2 col-md-4 col-sm-4 p-0">
-                    <div class="instagram__item set-bg" data-setbg="/static/img/instagram/insta-3.jpg">
-                        <div class="instagram__text">
-                            <i class="fa fa-instagram"></i>
-                            <a href="#">@ ashion_shop</a>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-2 col-md-4 col-sm-4 p-0">
-                    <div class="instagram__item set-bg" data-setbg="/static/img/instagram/insta-4.jpg">
-                        <div class="instagram__text">
-                            <i class="fa fa-instagram"></i>
-                            <a href="#">@ ashion_shop</a>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-2 col-md-4 col-sm-4 p-0">
-                    <div class="instagram__item set-bg" data-setbg="/static/img/instagram/insta-5.jpg">
-                        <div class="instagram__text">
-                            <i class="fa fa-instagram"></i>
-                            <a href="#">@ ashion_shop</a>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-2 col-md-4 col-sm-4 p-0">
-                    <div class="instagram__item set-bg" data-setbg="/static/img/instagram/insta-6.jpg">
-                        <div class="instagram__text">
-                            <i class="fa fa-instagram"></i>
-                            <a href="#">@ ashion_shop</a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-    <!-- Instagram End -->
+
 
     <!-- Footer Section Begin -->
     <footer class="footer">
@@ -820,6 +609,102 @@
     <script src="/static/js/owl.carousel.min.js"></script>
     <script src="/static/js/jquery.nicescroll.min.js"></script>
     <script src="/static/js/main.js"></script>
+    <!--=============== SWIPER JS ===============-->
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+
+    <!--=============== MAIN JS ===============-->
+    <script src="static/assets/js/main.js"></script>
+
+    <script>
+        $(document).ready(function () {
+            getCategories();
+            getproducts()
+        });
+
+        function getCategories() {
+
+            $.get('getcategeorys', {}, function (rt) {
+
+                var cats = "";
+
+                rt.categories.map(ele => {
+                    cats += `
+            <a class="category__item swiper-slide" onclick='getproducts(${ele.id})'>
+                <img src="/media/${ele.image}" class="category__img">
+                <h3 class="category__title">${ele.name}</h3>
+            </a>`;
+                });
+
+                $("#catdata").html(cats);
+            });
+        }
+        function getproducts(catid) {
+
+            if (catid == undefined) {
+                catid = 0
+            }
+            $.get("getproducts", { catid }, function (rt) {
+
+                var pro = ""
+                rt.products.map(ele => {
+                    pro += `
+                        <div class="product__item">
+                            <div class="product__banner">
+                                <a href="" class="product__images">
+                                    <img src="media/${ele.image}" alt="" class="product__img default" />
+
+                                </a>
+                                <div class="product__actions">
+                                    <a href="#" class="action__btn" aria-label="Quick View">
+                                        <i class="fi fi-rs-eye"></i>
+                                    </a>
+                                    <a href="#" class="action__btn" aria-label="Add to Wishlist">
+                                        <i class="fi fi-rs-heart"></i>
+                                    </a>
+                                    <a href="#" class="action__btn" aria-label="Compare">
+                                        <i class="fi fi-rs-shuffle"></i>
+                                    </a>
+                                </div>
+
+                            </div>
+                            <div class="product__content">
+                               
+                                <a href="details.html">
+                                    <h3 class="product__title">${ele.name}</h3>
+                                </a>
+                                
+                                <div class="product__price flex">
+                                    <span class="new__price">${ele.price}</span>
+
+                                </div>
+                                <a href="#" class="action__btn cart__btn" aria-label="Add To Cart">
+                                    <i class="fi fi-rs-shopping-bag-add"></i>
+                                </a>
+                            </div>
+                        </div>`
+                })
+                $("#prodata").html(pro)
+            })
+        }
+        function addtocart(pid) {
+
+            $.get('addtocart', { pid }, function (rt) {
+                if (rt == 'AnonymousUser') {
+                    location.href = "home"
+                }
+                else {
+                    alert(rt)
+                }
+            })
+        }
+
+
+
+
+
+
+    </script>
+
 </body>
 
 </html>

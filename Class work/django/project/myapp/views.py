@@ -5,16 +5,48 @@ from django.contrib.auth.decorators import login_required
 from myapp.models import *
 from django.http import JsonResponse,HttpResponse
 
+
 # Create your views here.
 
 
 def index(request):
+    # products = product.objects.all()
+    # categeorys = Categeory.objects.all()
     return render(request,'index.html')
 
+def get_products(request):
+    catid = request.GET['catid']
+    if int(catid) > 0: 
+        products = product.objects.filter(categeory_id=catid)
+        return JsonResponse({"products":list(products.values())})
+    else:
+        products = product.objects.all()
+        return JsonResponse({"products":list(products.values())})
 
+def get_categeorys(request):
+    categories = Categeory.objects.all()
+    return JsonResponse({'categories': list(categories.values())})
+
+
+@login_required(login_url="home")
 def cart(request):
     return render(request,'cart.html')
 
+def addtocart(request):
+    pid = request.GET['pid']
+    products = product.objects.get(pk=pid)
+    user = request.user
+    if user.is_anonymous:
+            return HttpResponse(user)
+    else:
+            isexist = Cart.objects.filter(user=user,products=products)
+            if(len(isexist)>=1):
+                isexist[0].qty = isexist[0].qty+1
+                isexist[0].save()
+                return HttpResponse("Product added into cart")
+            else:
+                Cart.objects.create(products=products,user=user,qty=1)
+                return HttpResponse("Product added into cart")
 def blog(request):
     return render(request,'blog.html')
 
