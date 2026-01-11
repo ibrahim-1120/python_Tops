@@ -87,3 +87,6 @@ def home(request):
 def user_logout(request):
     logout(request)
     return render(request,'home.html')
+
+def details(request):
+    return render(request,'details.html')
