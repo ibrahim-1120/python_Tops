@@ -24,4 +24,4 @@ class Cart(models.Model):
     qty = models.IntegerField()
 
     def total_price(self):
-        return self.qty*self.product.price
+        return self.qty*self.products.price

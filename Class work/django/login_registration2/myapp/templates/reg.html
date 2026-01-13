@@ -80,6 +80,8 @@
         {%csrf_token%}
         <div class="card">
             <h2>Create Account</h2>
+            <span>{{msg}}</span>
+            <span>{{err}}</span>
 
             <div class="input-field">
                 <label>First name</label>
@@ -90,7 +92,6 @@
                 <label>Last Name</label>
                 <input type="text" placeholder="Enter Full Name" name="lname">
             </div>
-
 
             <div class="input-field">
                 <label>Username</label>

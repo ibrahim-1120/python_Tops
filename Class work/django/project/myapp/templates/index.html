@@ -88,7 +88,7 @@
                             </li>
                             {%if user.is_authenticated%}
                             <li>
-                                Hi{{user}}!
+                                Hi {{user}}
                             </li>
                             {%else%}
                             <li>
@@ -655,7 +655,7 @@
                     pro += `
                         <div class="product__item">
                             <div class="product__banner">
-                                <a href="{%url 'details'%}" class="product__images">
+                                <a href="{%url 'details'%}?pid={{ele.id}}" class="product__images">
                                     <img src="media/${ele.image}" alt="" class="product__img default" />
 
                                 </a>
@@ -682,7 +682,7 @@
                                     <span class="new__price">${ele.price}</span>
 
                                 </div>
-                                <a href="#" class="action__btn cart__btn" aria-label="Add To Cart">
+                                <a class="action__btn cart__btn" aria-label="Add To Cart" onclick="addtocart(${ele.id})">
                                     <i class="fi fi-rs-shopping-bag-add"></i>
                                 </a>
                             </div>
@@ -702,13 +702,6 @@
                 }
             })
         }
-
-
-
-
-
-
-
     </script>
 
 </body>

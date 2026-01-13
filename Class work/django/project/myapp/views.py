@@ -10,8 +10,8 @@ from django.http import JsonResponse,HttpResponse
 
 
 def index(request):
-    # products = product.objects.all()
-    # categeorys = Categeory.objects.all()
+    products = product.objects.all()
+    categeorys = Categeory.objects.all()
     return render(request,'index.html')
 
 def get_products(request):
@@ -30,7 +30,8 @@ def get_categeorys(request):
 
 @login_required(login_url="home")
 def cart(request):
-    return render(request,'cart.html')
+    carts = Cart.objects.filter(user=request.user)
+    return render(request,'cart.html',{'carts':carts})
 
 def addtocart(request):
     pid = request.GET['pid']
@@ -62,7 +63,8 @@ def registration(request):
         password = request.POST['password']
 
         if User.objects.filter(username=username).exists():
-            return render(request,'registration.html',{'err':'Username already exits !'})
+           return render(request,'registration.html',{'msg':'Registration done successfully!'})
+
         else:
             u = User(first_name=fname,last_name=lname,username=username)
             u.set_password(password)
@@ -77,7 +79,7 @@ def home(request):
         u=authenticate(username=username,password=password)
 
         if u is None:
-            return render(request,'index.html',{'err':'invalid details'})
+            return render(request,'home.html',{'err':'invalid details'})
         else:
             login(request,u)
             return redirect('index')
@@ -86,7 +88,9 @@ def home(request):
 
 def user_logout(request):
     logout(request)
-    return render(request,'home.html')
+    return render(request,'index.html')
 
 def details(request):
+    # pid = request.GET['pid']
+    # pro= product.objects.get(pk=pid)
     return render(request,'details.html')
