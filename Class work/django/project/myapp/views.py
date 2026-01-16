@@ -93,4 +93,4 @@ def user_logout(request):
 def details(request):
     # pid = request.GET['pid']
     # pro= product.objects.get(pk=pid)
-    return render(request,'details.html')
+    return render(request,'details.html'        )
