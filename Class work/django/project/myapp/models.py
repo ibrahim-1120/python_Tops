@@ -26,7 +26,7 @@ class Cart(models.Model):
     def total_price(self):
         return self.qty*self.products.price
 
-class order(models.Models):
+
   
 
     
