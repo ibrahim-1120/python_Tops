@@ -92,14 +92,13 @@
 
     <div class="mail-container">
         <h2>Send Mail</h2>
-
-        <form method="post">
-            <!-- CSRF token (use only if Django) -->
-            <!-- {% csrf_token %} -->
+        <span>{{result}}</span>
+        <form method="post" action="{%url 'sendmail'%}">
+            {%csrf_token%}
 
             <div class="form-group">
-                <label>Sender Email</label>
-                <input type="email" name="sender" placeholder="Enter sender email" required>
+                <label>To</label>
+                <input type="email" name="address" placeholder="example@gmail.com" required>
             </div>
 
             <div class="form-group">
@@ -113,6 +112,9 @@
             </div>
 
             <button type="submit">Send Mail</button>
+            <br><br>
+
+            <button><a href="{%url 'payment'%}">For Payment</a></button>
         </form>
     </div>
 

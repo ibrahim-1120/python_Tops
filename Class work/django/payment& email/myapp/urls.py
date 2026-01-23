@@ -4,5 +4,6 @@ from myapp.views import *
 urlpatterns=[
     path('',email,name='email'),
     path('payment',payment,name='payment'),
-    path('pay',pay,name='pay')
+    path('pay',pay,name='pay'),
+    path('sendmail',sendmail,name='sendmail')
 ]
